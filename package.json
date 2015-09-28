@@ -4,7 +4,8 @@
   "description": "Website and documentation for Fridge CMS platform.",
   "main": "n/a",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build && git-directory-deploy --directory public --branch gh-pages"
   },
   "keywords": [],
   "author": "Mike Kruk <mike@ripeworks.com>",
@@ -19,5 +20,8 @@
     "react-router": "^0.13.3",
     "typography": "^0.3.6",
     "underscore.string": "^3.1.1"
+  },
+  "devDependencies": {
+    "git-directory-deploy": "^1.2.1"
   }
 }
