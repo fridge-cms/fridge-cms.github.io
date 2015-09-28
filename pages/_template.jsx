@@ -10,6 +10,7 @@ import typography from 'utils/typography';
 
 // Style code
 import 'css/github.css';
+import '!css!stylus!css/main.styl'
 
 const { rhythm, fontSizeToPx } = typography;
 
