@@ -5,7 +5,8 @@
   "main": "n/a",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && git-directory-deploy --directory public --branch gh-pages"
+    "deploy": "gatsby build && surge ./public",
+    "start": "gatsby serve"
   },
   "keywords": [],
   "author": "Mike Kruk <mike@ripeworks.com>",

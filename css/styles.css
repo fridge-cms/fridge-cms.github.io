@@ -1,0 +1,38 @@
+html {
+  text-size-adjust: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+header {
+  background: #47454b;
+  padding: 2em 0;
+}
+
+.branding {
+  height: 40px;
+}
+
+.hero {
+  background: #47454b url('/img/application-view.png') no-repeat center bottom;
+  text-align: center;
+  padding: 5em 2em 40% 2em;
+}
+
+.hero h1, .hero h2 {
+  color: white;
+}
+
+.nav {
+  text-align: right;
+}
+
+.nav a {
+  margin-left: 1em;
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    background-size: 90% auto;
+  }
+}
