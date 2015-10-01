@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && surge ./public",
+    "deploy": "gatsby build && surge ./public large-desk.surge.sh",
     "start": "gatsby serve"
   },
   "keywords": [],

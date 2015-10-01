@@ -5,8 +5,8 @@ export default new Typography({
   baseLineHeight: '24px',
   bodyFontFamily: '"proxima-nova", sans-serif',
   headerFontFamily: '"proxima-nova", sans-serif',
-  bodyWeight: 100,
-  headerWeight: 300,
-  boldWeight: 500,
+  bodyWeight: 400,
+  headerWeight: 400,
+  boldWeight: 600,
   modularScales: ['minor third']
 })

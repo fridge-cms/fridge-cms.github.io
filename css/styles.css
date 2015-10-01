@@ -15,12 +15,27 @@ header {
 
 .hero {
   background: #47454b url('/img/application-view.png') no-repeat center bottom;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15222c+0,294151+100 */
+  /* background: #15222c; /1* Old browsers *1/ */
+  /* background: -moz-linear-gradient(top,  #15222c 0%, #294151 100%); /1* FF3.6+ *1/ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#15222c), color-stop(100%,#294151)); /1* Chrome,Safari4+ *1/ */
+  /* background: -webkit-linear-gradient(top,  #15222c 0%,#294151 100%); /1* Chrome10+,Safari5.1+ *1/ */
+  /* background: -o-linear-gradient(top,  #15222c 0%,#294151 100%); /1* Opera 11.10+ *1/ */
+  /* background: -ms-linear-gradient(top,  #15222c 0%,#294151 100%); /1* IE10+ *1/ */
+  /* background: linear-gradient(to bottom,  #15222c 0%,#294151 100%); /1* W3C *1/ */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15222c', endColorstr='#294151',GradientType=0 ); /1* IE6-9 *1/ */
   text-align: center;
   padding: 5em 2em 40% 2em;
 }
 
-.hero h1, .hero h2 {
+.hero h1 {
   color: white;
+  font-size: 2.25em;
+  margin-bottom: .35em;
+}
+
+.hero h2 {
+  color: rgba(255,255,255,.7);
 }
 
 .nav {
@@ -28,7 +43,13 @@ header {
 }
 
 .nav a {
+  color: rgba(255, 255, 255, .7);
   margin-left: 1em;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 @media (max-width: 1200px) {
