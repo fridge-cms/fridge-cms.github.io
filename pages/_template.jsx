@@ -62,7 +62,7 @@ module.exports = React.createClass({
                 <Link to={`${urlPrefix}/docs/`}>Documentation</Link>
                 <Link to={`${urlPrefix}/pricing/`}>Pricing</Link>
                 <Link to={`${urlPrefix}/blog/`}>Blog</Link>
-                <a href='https://fridgecms.com'>Sign in</a>
+                <a className='action' href='https://fridgecms.com'>Sign in</a>
               </Span>
             </Grid>
           </Container>

@@ -26,6 +26,7 @@ header {
   /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15222c', endColorstr='#294151',GradientType=0 ); /1* IE6-9 *1/ */
   text-align: center;
   padding: 5em 2em 40% 2em;
+  max-height: 900px;
 }
 
 .hero h1 {
@@ -52,8 +53,41 @@ header {
   color: rgba(255, 255, 255, 1);
 }
 
+.nav a.action {
+  color: #47454b;
+  background: white;
+  border-radius: 3px;
+  padding: .25em .6em;
+}
+
+.nav a.action:hover {
+  color: #47454b;
+}
+
 @media (max-width: 1200px) {
   .hero {
     background-size: 90% auto;
   }
+}
+
+.step {
+  display: inline-block;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  margin: 4px;
+}
+
+.step.current {
+  background: #333;
+}
+
+.features {
+  padding: 2em;
+}
+
+.features h2 {
+  text-align: center;
+  margin: 2em 0;
 }
