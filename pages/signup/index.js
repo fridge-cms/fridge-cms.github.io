@@ -39,13 +39,28 @@ export default class Signup extends React.Component {
   }
 
   render() {
-    const {step} = this.state
-
-    switch(step) {
-      case 1:
-        return <CreateAccount save={this.save.bind(this)} nextStep={this.nextStep.bind(this)} />
-      case 2:
-        return <CreateSite save={this.save.bind(this)} nextStep={this.submit.bind(this)} />
-    }
+    return <Container maxWidth={980}>
+      <h1>Your Information</h1>
+      <p>
+        <label>Name</label>
+        <input type='text' ref='name' />
+      </p>
+      <p>
+        <label>Email</label>
+        <input type='email' ref='email' />
+      </p>
+      <p>
+        <label>Password</label>
+        <input type='password' ref='password' />
+      </p>
+      <h1>Your Fridge</h1>
+      <p>
+        <label>Fridge</label>
+        <input type='text' ref='site_name' />
+      </p>
+      <p>
+        <button onClick={this.submit.bind(this)}>Create Account</button>
+      </p>
+    </Container>
   }
 }

@@ -1,2 +1,75 @@
+$color-bg = #47454b
+
+@import './api'
+
+*
+  box-sizing: border-box
+
+html
+  text-size-adjust: none
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+
+a:link, a:visited
+  color: #0296ee
+
 header
-  background: #47454b
+  background: $color-bg
+  padding: 2em 0
+
+.branding
+  height: 40px
+
+.hero
+  background: $color-bg url('/img/application-view.png') no-repeat center bottom
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15222c+0,294151+100 */
+  /* background: #15222c; /1* Old browsers *1/ */
+  /* background: -moz-linear-gradient(top,  #15222c 0%, #294151 100%); /1* FF3.6+ *1/ */
+  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#15222c), color-stop(100%,#294151)); /1* Chrome,Safari4+ *1/ */
+  /* background: -webkit-linear-gradient(top,  #15222c 0%,#294151 100%); /1* Chrome10+,Safari5.1+ *1/ */
+  /* background: -o-linear-gradient(top,  #15222c 0%,#294151 100%); /1* Opera 11.10+ *1/ */
+  /* background: -ms-linear-gradient(top,  #15222c 0%,#294151 100%); /1* IE10+ *1/ */
+  /* background: linear-gradient(to bottom,  #15222c 0%,#294151 100%); /1* W3C *1/ */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15222c', endColorstr='#294151',GradientType=0 ); /1* IE6-9 *1/ */
+  text-align: center
+  padding: 5em 2em 40% 2em
+  max-height: 900px
+
+.hero h1
+  color: white
+  font-size: 2.25em
+  margin-bottom: .35em
+
+.hero h2
+  color: rgba(255,255,255,.7)
+
+.nav
+  text-align: right
+
+  a
+    color: rgba(255,255,255,.7)
+    margin-left: 1em
+    text-decoration: none
+
+    &:hover
+      color: rgba(255,255,255,1)
+
+    &.action
+      color: $color-bg
+      background: white
+      border-radius: 3px
+      padding: .25em .6em
+
+      &:hover
+        color: $color-bg
+
+@media (max-width: 1200px)
+  .hero
+    background-size: 90% auto
+
+.features
+  padding: 2em
+
+  h2
+    text-align: center
+    margin: 2em 0

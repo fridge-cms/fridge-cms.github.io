@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid'
 
-export default class Home extends React.Component {
+export default class Home extends Component {
   render() {
     return (
       <div>
@@ -9,10 +9,12 @@ export default class Home extends React.Component {
           <h1><strong>Fridge.</strong> Real content management.</h1>
           <h2>A robust API and intuitive dashboard for any kind of content.</h2>
           <p>
-            <a href=''>Learn more</a>
-            <a href='/signup/'>Sign up free</a>
+            <a href='https://fridgecms.com/signup'>Start Fridge for free</a>
           </p>
         </div>
+        <Container style={{maxWidth: 960}} className='intro'>
+          <h3>Fridge originated out of a need to provide </h3>
+        </Container>
         <Container style={{maxWidth: 960}} className='features'>
           <Grid columuns={12} gutterRatio={2}>
             <Span columns={12}>
