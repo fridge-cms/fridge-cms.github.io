@@ -11,10 +11,15 @@ export default class Home extends Component {
           <p>
             <a href='https://fridgecms.com/signup'>Start Fridge for free</a>
           </p>
+          <div className='interface'>
+            <img src='/img/application-view.png' />
+          </div>
         </div>
-        <Container style={{maxWidth: 960}} className='intro'>
-          <h3>Fridge originated out of a need to provide </h3>
-        </Container>
+        <div className='intro'>
+          <Container style={{maxWidth: 960}}>
+            <h3>Fridge originated out of a need to provide true content management for everyone that made no assumptions. Developer friendly environment meets user focused intuitive UI.</h3>
+          </Container>
+        </div>
         <Container style={{maxWidth: 960}} className='features'>
           <Grid columuns={12} gutterRatio={2}>
             <Span columns={12}>

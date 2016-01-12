@@ -47,14 +47,7 @@ export default class Template extends Component {
     return <div>
       <Breakpoint minWidth={700}>
         <div>
-          <div
-            style={{
-              overflowY: 'auto',
-              paddingRight: `calc(${rhythm(1/2)} - 1px)`,
-              position: 'absolute',
-              width: `calc(${rhythm(8)} - 1px)`,
-              borderRight: '1px solid lightgrey'
-            }}>
+          <div className='api-nav' style={{width: `calc(${rhythm(8)} - 1px)`}}>
             <ul
               style={{
                 listStyle: 'none',
@@ -64,11 +57,7 @@ export default class Template extends Component {
                 {docPages}
             </ul>
           </div>
-          <div
-            style={{
-              padding: `0 ${rhythm(1)}`,
-              paddingLeft: `calc(${rhythm(8)} + ${rhythm(1)})`
-            }}>
+          <div style={{marginLeft: `calc(${rhythm(8)})`}} className='docs'>
             <RouteHandler typography={typography} {...this.props}/>
           </div>
         </div>
@@ -84,7 +73,9 @@ export default class Template extends Component {
         </select>
         <br />
         <br />
-        <RouteHandler typography={typography} {...this.props}/>
+        <div className='docs'>
+          <RouteHandler typography={typography} {...this.props}/>
+        </div>
       </Breakpoint>
     </div>
   }

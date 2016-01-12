@@ -19,6 +19,15 @@ export default class Api extends Component {
     lang: 'shell'
   };
 
+  componentWillMount() {
+    if (localStorage) {
+      const lang = localStorage.getItem('docsLang')
+      if (languages[lang]) {
+        this.setState({lang})
+      }
+    }
+  }
+
   componentDidMount() {
     this.updateLanguage()
   }
@@ -41,6 +50,7 @@ export default class Api extends Component {
   changeLanguage(lang, e) {
     e.preventDefault()
     this.setState({lang})
+    localStorage && localStorage.setItem('docsLang', lang)
   }
 
   render() {

@@ -9,10 +9,10 @@ module.exports = React.createClass({
 
     return (
       <DocumentTitle title={`${post.title} | ${this.props.config.siteTitle}`}>
-        <div className="markdown">
-          <h1>{post.title}</h1>
+        <article className='markdown'>
+          <h1 className='post-title'>{post.title}</h1>
           <div dangerouslySetInnerHTML={{__html: post.body}}/>
-        </div>
+        </article>
       </DocumentTitle>
     );
   }

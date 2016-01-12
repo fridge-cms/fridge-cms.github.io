@@ -7,7 +7,7 @@ import { link } from 'gatsby-helpers';
 import typography from 'utils/typography';
 
 // Style code
-import 'css/github.css';
+import 'css/railscasts.css';
 import 'css/main.styl'
 
 const { rhythm, fontSizeToPx } = typography;
