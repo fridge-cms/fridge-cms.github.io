@@ -4,6 +4,7 @@ import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid'
 import Typography from 'typography'
 import sortBy from 'lodash/collection/sortBy'
 import { templateChildrenPages } from 'gatsby-helpers'
+import Header from '../../components/Header'
 
 var typography = new Typography();
 var rhythm = typography.rhythm, fontSizeToMS = typography.fontSizeToMS;
@@ -45,6 +46,7 @@ export default class Template extends Component {
     })
 
     return <div>
+      <Header />
       <Breakpoint minWidth={700}>
         <div>
           <div className='api-nav' style={{width: `calc(${rhythm(8)} - 1px)`}}>

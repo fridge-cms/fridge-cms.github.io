@@ -1,5 +1,6 @@
 import React from 'react'
 import { RouteHandler, Link } from 'react-router'
+import Header from '../../components/Header'
 
 export default class Blog extends React.Component {
   getPosts() {
@@ -9,8 +10,11 @@ export default class Blog extends React.Component {
   }
 
   render() {
-    return <div className='blog'>
-      <RouteHandler {...this.props} />
+    return <div>
+      <Header />
+      <div className='blog'>
+        <RouteHandler {...this.props} />
+      </div>
     </div>
   }
 }

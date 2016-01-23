@@ -1,4 +1,4 @@
-$color-bg = #47454b
+$color-cta = #70b934
 
 @import './api'
 
@@ -6,49 +6,68 @@ $color-bg = #47454b
   box-sizing: border-box
 
 html
+  position: relative
+  min-height: 100%
   text-size-adjust: none
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
 
-a:link, a:visited
+body
+  background: white
+  margin: 0 0 100px 0
+
+a
   color: #0296ee
+  transition: color .4s ease
 
 header
-  background: $color-bg
-  padding: 2em 0
+  background: linear-gradient(to bottom,  #15222c 0%,#294151 200%);
+  padding: 2em 0 1em 0
+  &.home
+    padding: 3em 0 0 0
+
+  .container
+    width: 90%
+    max-width: 960px
+    margin: 0 auto
 
 .branding
-  height: 40px
+  img
+    height: 40px
+    margin: -.5em 0 0 0
 
 .hero
-  background: $color-bg
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15222c+0,294151+100 */
-  /* background: #15222c; /1* Old browsers *1/ */
-  /* background: -moz-linear-gradient(top,  #15222c 0%, #294151 100%); /1* FF3.6+ *1/ */
-  /* background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#15222c), color-stop(100%,#294151)); /1* Chrome,Safari4+ *1/ */
-  /* background: -webkit-linear-gradient(top,  #15222c 0%,#294151 100%); /1* Chrome10+,Safari5.1+ *1/ */
-  /* background: -o-linear-gradient(top,  #15222c 0%,#294151 100%); /1* Opera 11.10+ *1/ */
-  /* background: -ms-linear-gradient(top,  #15222c 0%,#294151 100%); /1* IE10+ *1/ */
-  /* background: linear-gradient(to bottom,  #15222c 0%,#294151 100%); /1* W3C *1/ */
-  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15222c', endColorstr='#294151',GradientType=0 ); /1* IE6-9 *1/ */
   text-align: center
   padding: 5em 2em 0 2em
   max-height: 900px
 
-.hero h1
+  h1
+    color: white
+    font-size: 2.25em
+    margin-bottom: .35em
+
+  h2
+    color: rgba(255,255,255,.7)
+
+  .interface
+    img
+      display: block
+      margin: 0 auto
+
+.cta
+  display: inline-block
+  background: $color-cta
+  border-radius: 4px
+  padding: .4em 1em
   color: white
-  font-size: 2.25em
-  margin-bottom: .35em
+  text-decoration: none
+  margin: .5em 0 1.5em 0
+  transition: background .25s ease
+  &:hover
+    background: darken($color-cta, 15%)
 
-.hero h2
-  color: rgba(255,255,255,.7)
-
-.hero .interface
-  img
-    display: block
-    margin: 0 auto
-
-.nav
+nav
+  float: right
   text-align: right
 
   a
@@ -60,13 +79,13 @@ header
       color: rgba(255,255,255,1)
 
     &.action
-      color: $color-bg
-      background: white
+      color: white
+      border: 1px solid white
       border-radius: 3px
       padding: .25em .6em
 
       &:hover
-        color: $color-bg
+        color: white
 
 .intro
   border-top: 1px solid #d1d1d1
@@ -82,7 +101,7 @@ header
 
   h2
     text-align: center
-    margin: 2em 0
+    margin: 3em 0 2em 0
 
   h3
     margin-bottom: 1em
@@ -109,3 +128,35 @@ header
 .docs
   article
     padding: 4em
+
+footer
+  position: absolute
+  left: 0
+  bottom: 0
+  font-size: .9em
+  height: 100px
+  width: 100%
+  padding: 1em .75rem
+
+  a:link, a:visited
+    display: inline-block
+    margin: 0 .5em
+    text-decoration: none
+    color: #6c6c6c
+
+    &:hover
+      color: darken(#6c6c6c, 30%)
+
+@media (max-width: 640px)
+  html
+    font-size: 14px
+
+  .branding
+    display: block
+    margin-bottom: 1em
+    text-align: center
+
+  nav
+    display: block
+    float: none
+    text-align: center

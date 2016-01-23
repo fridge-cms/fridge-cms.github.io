@@ -26,7 +26,7 @@ export default class Html extends Component {
         <TypographyStyle/>
         <script src='https://use.typekit.net/mfk7jju.js'/>
       </head>
-      <body className="landing-page">
+      <body>
         <div id="react-mount" dangerouslySetInnerHTML={{__html: this.props.body}} />
         <script src={link('/bundle.js')}/>
       </body>

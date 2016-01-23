@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
 import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid'
+import Header from '../components/Header'
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <div className='hero'>
-          <h1><strong>Fridge.</strong> Real content management.</h1>
-          <h2>A robust API and intuitive dashboard for any kind of content.</h2>
-          <p>
-            <a href='https://fridgecms.com/signup'>Start Fridge for free</a>
-          </p>
-          <div className='interface'>
-            <img src='/img/application-view.png' />
+        <Header className='home'>
+          <div className='hero'>
+            <h1><strong>Fridge.</strong> Real content management.</h1>
+            <h2>A robust API and intuitive dashboard for any kind of content.</h2>
+            <p>
+              <a className='cta' href='https://fridgecms.com/signup'>Start Fridge for free</a>
+            </p>
+            <div className='interface'>
+              <img src='/img/application-view.png' />
+            </div>
           </div>
-        </div>
+        </Header>
         <div className='intro'>
           <Container style={{maxWidth: 960}}>
             <h3>Fridge originated out of a need to provide true content management for everyone that made no assumptions. Developer friendly environment meets user focused intuitive UI.</h3>
