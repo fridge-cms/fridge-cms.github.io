@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { RouteHandler, Link, State, Navigation } from 'react-router'
-import { Container, Grid, Breakpoint, Span } from 'react-responsive-grid'
+import { RouteHandler, Link } from 'react-router'
+import { Breakpoint } from 'react-responsive-grid'
 import Typography from 'typography'
 import sortBy from 'lodash/collection/sortBy'
 import { templateChildrenPages } from 'gatsby-helpers'
