@@ -1,0 +1,40 @@
+$color-banner = #f7f6f1
+$color-plan-text = desaturate(darken($color-banner, 35), 20)
+
+.plan
+  margin-bottom: 1em
+
+  .plan-banner
+    background: $color-banner
+    border: 1px solid darken($color-banner, 15%)
+    border-radius: 4px
+    text-align: center
+    padding: 2em 1em
+    margin-bottom: 1em
+
+    .price
+      font-size: 1.25em
+      font-weight: 700
+      color: $color-plan-text
+
+      .cycle
+        font-weight: 400
+        font-size: .75em
+        display: block
+
+    h2
+      color: $color-plan-text
+      margin-bottom: 0
+
+    p
+      color: $color-plan-text
+      font-size: .9em
+      line-height: 1.4
+
+  .plan-details
+    ul
+      list-style: none
+      margin: 0 0 0 2px
+
+    i
+      margin-right: .25em

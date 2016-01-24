@@ -24,11 +24,7 @@ export default class Template extends Component {
     var childPages, docOptions, docPages;
     rhythm = this.props.typography.rhythm;
     childPages = templateChildrenPages(__filename, this.props.state).map(child => {
-      return {
-        title: child.data.title,
-        order: child.data.order,
-        path: child.path
-      }
+      return {...child.data, path: child.path}
     })
     childPages = sortBy(childPages, child => child.order)
 
@@ -37,6 +33,7 @@ export default class Template extends Component {
     })
 
     docPages = childPages.map(child => {
+      console.log(child)
       const isActive = router.isActive(child.path)
       return <li key={child.path} style={{marginBottom: rhythm(1/2)}}>
         <Link to={child.path} style={{textDecoration: 'none'}}>
@@ -50,14 +47,7 @@ export default class Template extends Component {
       <Breakpoint minWidth={700}>
         <div>
           <div className='api-nav' style={{width: `calc(${rhythm(8)} - 1px)`}}>
-            <ul
-              style={{
-                listStyle: 'none',
-                marginLeft: 0,
-                marginTop: rhythm(1/2)
-              }}>
-                {docPages}
-            </ul>
+            <ul>{docPages}</ul>
           </div>
           <div style={{marginLeft: `calc(${rhythm(8)})`}} className='docs'>
             <RouteHandler typography={typography} {...this.props}/>

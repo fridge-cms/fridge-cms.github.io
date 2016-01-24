@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
 import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid'
 import Header from '../components/Header'
+import Plan from '../components/Plan'
+import plans from '../utils/plans'
 
 export default class Home extends Component {
+  state = {
+    annual : false
+  };
+
+  onChangePricing(e) {
+    this.setState({annual: !!e.target.checked})
+  }
+
   render() {
+    const {annual} = this.state
+
     return (
       <div>
         <Header className='home'>
@@ -65,6 +77,24 @@ export default class Home extends Component {
               <h3>Client friendly</h3>
               <p>Powerful doesn’t have to be complicated. Fridge’s dashboard is easy to use for your clients and customers as well. </p>
             </Span>
+          </Grid>
+        </Container>
+        <Container style={{maxWidth: 960}} className='prices'>
+          <div className='text-center'>
+            <h2>No Nonsense Pricing</h2>
+            <div className='switch'>
+              <input type='checkbox' id='cycle' name='cycle'
+                onChange={this.onChangePricing.bind(this)} value={annual}
+              />
+              <label htmlFor='cycle' data-on='Annually' data-off='Monthly'></label>
+            </div>
+          </div>
+          <Grid columns={12} gutterRatio={2}>
+            {plans.map((plan, i) => {
+              return <Span key={i} columns={3} last={i == plans.length-1}>
+                <Plan annual={annual} {...plan} />
+              </Span>
+            })}
           </Grid>
         </Container>
       </div>

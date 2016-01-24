@@ -1,6 +1,8 @@
 $color-cta = #70b934
 
 @import './api'
+@import './pricing'
+@import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
 
 *
   box-sizing: border-box
@@ -19,6 +21,9 @@ body
 a
   color: #0296ee
   transition: color .4s ease
+
+.text-center
+  text-align: center
 
 header
   background: linear-gradient(to bottom,  #15222c 0%,#294151 200%);
@@ -53,6 +58,7 @@ header
     img
       display: block
       margin: 0 auto
+      pointer-events: none
 
 .cta
   display: inline-block
@@ -146,6 +152,33 @@ footer
 
     &:hover
       color: darken(#6c6c6c, 30%)
+
+.switch
+  border-radius: 4px
+  border: 1px solid #bcbcbc
+  display: inline-block
+  margin-bottom: 1em
+
+  input
+    position: absolute
+    visibility: hidden
+
+  label
+    &:before
+      content: attr(data-off)
+      dislay: inline-block
+
+    &:after
+      content: attr(data-on)
+      display: none
+
+  input:checked
+    + label
+      &:before
+        display: none
+      &:after
+        display: inline-block
+
 
 @media (max-width: 640px)
   html
