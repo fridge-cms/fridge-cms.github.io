@@ -1,30 +1,34 @@
 import React, { Component, PropTypes } from 'react'
-import { RouteHandler, Link } from 'react-router'
+import { prefixLink } from 'gatsby-helpers'
+import { Link } from 'react-router'
 import { Breakpoint } from 'react-responsive-grid'
-import Typography from 'typography'
 import sortBy from 'lodash/collection/sortBy'
-import { templateChildrenPages } from 'gatsby-helpers'
 import Header from '../../components/Header'
+import { config } from 'config'
 
-var typography = new Typography();
-var rhythm = typography.rhythm, fontSizeToMS = typography.fontSizeToMS;
+import typography from 'utils/typography'
+const { rhythm } = typography
 
 export default class Template extends Component {
   static contextTypes = {
-    router : PropTypes.func
+    router: PropTypes.object.isRequired
   }
 
-  handleTopicChange(e) {
-    const {router} = this.context
-    return router.transitionTo(e.target.value)
+  handleTopicChange (e) {
+    return this.context.router.push(e.target.value)
   }
 
-  render() {
+  render () {
     const {router} = this.context
-    var childPages, docOptions, docPages;
-    rhythm = this.props.typography.rhythm;
-    childPages = templateChildrenPages(__filename, this.props.state).map(child => {
-      return {...child.data, path: child.path}
+    var docOptions, docPages;
+
+    let childPages = config.docPages.map((p) => {
+      const page = this.props.route.pages.filter(page => page.path === p).shift()
+      console.log(page)
+      return {
+        title: page.data.title,
+        path: page.path
+      }
     })
     childPages = sortBy(childPages, child => child.order)
 
@@ -34,10 +38,10 @@ export default class Template extends Component {
 
     docPages = childPages.map(child => {
       console.log(child)
-      const isActive = router.isActive(child.path)
-      return <li key={child.path} style={{marginBottom: rhythm(1/2)}}>
-        <Link to={child.path} style={{textDecoration: 'none'}}>
-          {isActive ? <strong>{child.title}</strong> : child.title }
+      const isActive = prefixLink(child.path) === this.props.location.pathname
+      return <li key={child.path} style={{marginBottom: rhythm(1 / 2)}}>
+        <Link to={prefixLink(child.path)} style={{textDecoration: 'none'}}>
+          {isActive ? <strong>{child.title}</strong> : child.title}
         </Link>
       </li>
     })
@@ -50,7 +54,7 @@ export default class Template extends Component {
             <ul>{docPages}</ul>
           </div>
           <div style={{marginLeft: `calc(${rhythm(8)})`}} className='docs'>
-            <RouteHandler typography={typography} {...this.props}/>
+            {this.props.children}
           </div>
         </div>
       </Breakpoint>
@@ -58,7 +62,7 @@ export default class Template extends Component {
         <strong>Topics:</strong>
         {' '}
         <select
-          defaultValue={this.props.state.path}
+          defaultValue={this.props.location.pathname}
           onChange={this.handleTopicChange.bind(this)}
         >
           {docOptions}
@@ -66,7 +70,7 @@ export default class Template extends Component {
         <br />
         <br />
         <div className='docs'>
-          <RouteHandler typography={typography} {...this.props}/>
+          {this.props.children}
         </div>
       </Breakpoint>
     </div>

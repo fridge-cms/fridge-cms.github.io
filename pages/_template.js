@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { RouteHandler } from 'react-router'
 import typography from 'utils/typography'
 import Footer from '../components/Footer'
 
@@ -14,7 +13,7 @@ export default class Template extends Component {
 
   render() {
     return <div>
-      <RouteHandler typography={typography} {...this.props}/>
+      {this.props.children}
       <Footer />
     </div>
   }

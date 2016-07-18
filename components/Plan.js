@@ -14,13 +14,12 @@ export default class Plan extends Component {
     const {price} = this.props
     if (typeof price == 'string') return price
 
-    return Math.ceil((price * 12) * .75)
+    return Math.ceil(price * .75)
   }
 
   render() {
     const {name, description, details, annual} = this.props
     const price = annual ? this.annualPrice() : this.props.price
-    const cycleLabel = annual ? 'year' : 'month'
 
     return <div className='plan'>
       <div className='plan-banner'>
@@ -29,7 +28,7 @@ export default class Plan extends Component {
         <div className='price'>
           {!(typeof price == 'string') && '$'}{price}
           <span className='cycle'>
-            {!(typeof price == 'string') ? `per ${cycleLabel}` : 'forever'}
+            {!(typeof price == 'string') ? `per month` : '1 month'}
           </span>
         </div>
       </div>

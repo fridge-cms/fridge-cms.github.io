@@ -82,11 +82,15 @@ export default class Home extends Component {
         <Container style={{maxWidth: 960}} className='prices'>
           <div className='text-center'>
             <h2>No Nonsense Pricing</h2>
-            <div className='switch'>
-              <input type='checkbox' id='cycle' name='cycle'
-                onChange={this.onChangePricing.bind(this)} value={annual}
-              />
-              <label htmlFor='cycle' data-on='Annually' data-off='Monthly'></label>
+            <div className='billing-cycle-switcher'>
+              <label>Monthly</label>
+              <div className='switch'>
+                <input type='checkbox' id='cycle' name='cycle'
+                  onChange={this.onChangePricing.bind(this)} value={annual}
+                />
+                <label htmlFor='cycle'></label>
+              </div>
+              <label>Annually <span className='discount'>save 25%</span></label>
             </div>
           </div>
           <Grid columns={12} gutterRatio={2}>

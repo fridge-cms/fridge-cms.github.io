@@ -153,32 +153,50 @@ footer
     &:hover
       color: darken(#6c6c6c, 30%)
 
+.billing-cycle-switcher
+  margin-bottom: 2em
+
+  label
+    position: relative
+
+  label .discount
+    position: absolute
+    width: 75px
+    left: 100%
+    font-size: .9em
+
 .switch
   border-radius: 4px
   border: 1px solid #bcbcbc
   display: inline-block
-  margin-bottom: 1em
+  vertical-align: middle
+  margin: 0 5px
 
   input
     position: absolute
     visibility: hidden
 
   label
+    cursor: pointer
+    display: block
+    position: relative
+    width: 3em
+    height: 1em
+    margin: 1px
+
     &:before
-      content: attr(data-off)
-      dislay: inline-block
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      width: 35%
+      background: $color-cta
+      border-radius: 4px
+      transition: all .4s ease
 
-    &:after
-      content: attr(data-on)
-      display: none
-
-  input:checked
-    + label
-      &:before
-        display: none
-      &:after
-        display: inline-block
-
+  input:checked + label:before
+    left: (100 - 35)%
 
 @media (max-width: 640px)
   html

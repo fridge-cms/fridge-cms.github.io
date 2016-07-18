@@ -2,12 +2,12 @@ export default [
   {
     id: 'free', name: 'Free',
     price: 'Free',
-    description: 'Make something. Upgrade when ready.',
+    description: '',
+    // description: 'Make something. Upgrade when ready.',
     details: [
       '1 Fridge',
-      '10 Content Types',
-      '2 User Roles',
-      'No API keys'
+      '5 Content Types',
+      '30-day trial'
     ]
   },
   {
@@ -22,7 +22,7 @@ export default [
   },
   {
     id: 'basic', name: 'Basic',
-    price: 29,
+    price: 34,
     description: '',
     details: [
       '3 Fridges',
@@ -32,7 +32,7 @@ export default [
   },
   {
     id: 'standard', name: 'Standard',
-    price: 49,
+    price: 58,
     description: '',
     details: [
       '5 Fridges',

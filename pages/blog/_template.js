@@ -1,19 +1,18 @@
-import React from 'react'
-import { RouteHandler, Link } from 'react-router'
+import React, { Component } from 'react'
 import Header from '../../components/Header'
 
-export default class Blog extends React.Component {
-  getPosts() {
-    return this.props.pages.filter(page => {
+export default class Blog extends Component {
+  getPosts () {
+    return this.props.route.pages.filter(page => {
       return page.path && page.path.match(/\/blog\/(.+)/)
     })
   }
 
-  render() {
+  render () {
     return <div>
       <Header />
       <div className='blog'>
-        <RouteHandler {...this.props} />
+        {this.props.children}
       </div>
     </div>
   }

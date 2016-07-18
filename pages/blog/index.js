@@ -1,14 +1,14 @@
 import React from 'react'
-import { RouteHandler, Link } from 'react-router'
+import { Link } from 'react-router'
 
 export default class Blog extends React.Component {
-  getPosts() {
-    return this.props.pages.filter(page => {
+  getPosts () {
+    return this.props.route.pages.filter(page => {
       return page.path && page.path.match(/\/blog\/(.+)/)
     })
   }
 
-  render() {
+  render () {
     return <div>
       {this.getPosts().map(post => {
         const {title, body} = post.data
