@@ -16,6 +16,11 @@ export default class Html extends Component {
       title = this.props.title
     }
 
+    let css
+    if (process.env.NODE_ENV === 'production') {
+      css = <link href={prefixLink('/styles.css')} rel='stylesheet' />
+    }
+
     return <html lang='en'>
       <head>
         <meta charSet='utf-8' />
@@ -24,6 +29,7 @@ export default class Html extends Component {
         <title>{title}</title>
         <link rel='shortcut icon' href={this.props.favicon} />
         <TypographyStyle typography={typography} />
+        {css}
         <script src='https://use.typekit.net/mfk7jju.js' />
       </head>
       <body>

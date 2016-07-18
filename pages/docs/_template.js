@@ -19,9 +19,6 @@ export default class Template extends Component {
   }
 
   render () {
-    const {router} = this.context
-    var docOptions, docPages;
-
     let childPages = config.docPages.map((p) => {
       const page = this.props.route.pages.filter(page => page.path === p).shift()
       console.log(page)
@@ -32,12 +29,11 @@ export default class Template extends Component {
     })
     childPages = sortBy(childPages, child => child.order)
 
-    docOptions = childPages.map(child => {
+    const docOptions = childPages.map(child => {
       return <option key={child.path} value={child.path}>{child.title}</option>
     })
 
-    docPages = childPages.map(child => {
-      console.log(child)
+    const docPages = childPages.map(child => {
       const isActive = prefixLink(child.path) === this.props.location.pathname
       return <li key={child.path} style={{marginBottom: rhythm(1 / 2)}}>
         <Link to={prefixLink(child.path)} style={{textDecoration: 'none'}}>
