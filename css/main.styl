@@ -160,7 +160,7 @@ footer
     position: relative
 
   label .discount
-    position: absolute
+    color: $color-cta
     width: 75px
     left: 100%
     font-size: .9em
@@ -178,25 +178,27 @@ footer
 
   label
     cursor: pointer
-    display: block
+    display: inline-block
+    padding: .5em 1em
     position: relative
-    width: 3em
-    height: 1em
-    margin: 1px
+    min-width: 180px
 
-    &:before
-      content: ''
-      position: absolute
-      left: 0
-      top: 0
-      bottom: 0
-      width: 35%
-      background: $color-cta
-      border-radius: 4px
-      transition: all .4s ease
+  // Annually
+  input + label
+    border-right: 1px solid #bcbcbc
+    color: #bcbcbc
+    font-weight: 400
+  input:checked + label
+    color: #1b1b1b
+    font-weight: 700
 
-  input:checked + label:before
-    left: (100 - 35)%
+  // Monthly (default)
+  input + label + label
+    color: #1b1b1b
+    font-weight: 700
+  input:checked + label + label
+    color: #bcbcbc
+    font-weight: 400
 
 @media (max-width: 640px)
   html

@@ -6,14 +6,14 @@ import plans from '../utils/plans'
 
 export default class Home extends Component {
   state = {
-    annual : false
-  };
+    annual: true
+  }
 
-  onChangePricing(e) {
+  onChangePricing (e) {
     this.setState({annual: !!e.target.checked})
   }
 
-  render() {
+  render () {
     const {annual} = this.state
 
     return (
@@ -83,19 +83,18 @@ export default class Home extends Component {
           <div className='text-center'>
             <h2>No Nonsense Pricing</h2>
             <div className='billing-cycle-switcher'>
-              <label>Monthly</label>
               <div className='switch'>
                 <input type='checkbox' id='cycle' name='cycle'
-                  onChange={this.onChangePricing.bind(this)} value={annual}
+                  onChange={this.onChangePricing.bind(this)} checked={annual}
                 />
-                <label htmlFor='cycle'></label>
+                <label htmlFor='cycle'>Annually <span className='discount'>save 25%</span></label>
+                <label htmlFor='cycle'>Monthly</label>
               </div>
-              <label>Annually <span className='discount'>save 25%</span></label>
             </div>
           </div>
           <Grid columns={12} gutterRatio={2}>
             {plans.map((plan, i) => {
-              return <Span key={i} columns={3} last={i == plans.length-1}>
+              return <Span key={i} columns={3} last={i === plans.length - 1}>
                 <Plan annual={annual} {...plan} />
               </Span>
             })}
