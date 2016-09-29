@@ -15,6 +15,8 @@ const languages = {
 }
 
 const getToc = body => {
+  if (!document) return ''
+
   const el = document.createElement('html')
   el.innerHTML = body
   const toc = el.querySelector('.table-of-contents')
