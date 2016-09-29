@@ -15,7 +15,7 @@ const languages = {
 }
 
 const getToc = body => {
-  if (!document) return ''
+  if (typeof document === 'undefined') return ''
 
   const el = document.createElement('html')
   el.innerHTML = body
