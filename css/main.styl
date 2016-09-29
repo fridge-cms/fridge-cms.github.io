@@ -2,6 +2,7 @@ $color-cta = #70b934
 
 @import './api'
 @import './pricing'
+@import './docs'
 @import 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'
 
 *
@@ -26,10 +27,8 @@ a
   text-align: center
 
 header
-  background: linear-gradient(to bottom,  #15222c 0%,#294151 200%);
-  padding: 2em 0 1em 0
-  &.home
-    padding: 3em 0 0 0
+  background: #15222c
+  padding: 3em 0 2em 0
 
   .container
     width: 90%
@@ -40,6 +39,10 @@ header
   img
     height: 40px
     margin: -.5em 0 0 0
+
+.home
+  background: linear-gradient(to bottom, #15222c 0%, #294151 200%)
+  padding: 3em 0 0 0
 
 .hero
   text-align: center
@@ -130,10 +133,6 @@ nav
     a
       color: hsl(0,0%,20%)
       text-decoration: none
-
-.docs
-  article
-    padding: 4em
 
 footer
   position: absolute

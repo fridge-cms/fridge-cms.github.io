@@ -2,21 +2,13 @@
   min-height: 100%
   position: relative
 
-.api-nav
-  position: fixed
-  border-right: 1px solid #dce7ef
-  padding: 1em
-  min-height: 100%
-  overflow: hidden
-
-  ul
-    list-style: none
-    margin: 0.75rem 0 0 0
-
 .api-content
   color: #9199AA
   position: relative
   z-index: 30
+
+  .table-of-contents
+    display: none
 
   h1:first-child
     border-top: 0
@@ -27,7 +19,6 @@
     font-size: 1.875em
     padding-top: 1em
     padding-bottom: .5em
-    margin-top: 2em
     margin-bottom: 21px
 
   h2
@@ -117,6 +108,24 @@
         background: #292929
         color: #fff
 
+.toc
+  a
+    text-decoration: none
+
+  li > ul
+    display: none
+    font-size: .9em
+    margin-left: 1em
+
+    li
+      margin-bottom: 0
+
+  .active > a
+    font-weight: bold
+
+  .active > ul
+    display: block
+
 @media (min-width: 960px)
   .api-content
     >h1,>h2,>h3,>h4,>h5,>h6,>p,>table,>ul,>ol,>aside,>dl
@@ -130,3 +139,12 @@
 
   .api-code
     display: block
+
+@media (max-width: 959px)
+  .api-content
+    >h1,>h2,>h3,>h4,>h5,>h6,>p,>table,>ul,>ol,>aside,>dl
+      padding-left: 28px
+      padding-right: 28px
+    pre + p
+      margin-top: 1em
+

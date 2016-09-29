@@ -5,6 +5,8 @@ order: 10
 
 # Introduction
 
+[[toc]]
+
 The Fridge API is organized around REST. It is designed to have predictable and readable URLs with HTTP response codes to indicate API errors. We support cross-origin resource sharing to allow you to interact securely with our API from a client-side web application. JSON will be returned in all responses from the API, including errors.
 
 API client libraries are available in Ruby and PHP to make it easy to write applications that integrate with Fridge.
