@@ -1,9 +1,8 @@
 ---
 title: Content Type Reference
 order: 2
+published: true
 ---
-
-## Content Type Reference
 
 ### Text  
 
@@ -19,7 +18,7 @@ A field specifically for adding a date in MM/DD/YYYY format.
 
 ### Hidden
 
-Can be set for hidden data or as read-only data.
+Can be set for hidden data or as read-only data. This part works well with data that is tied to another integration and should not be editable through the dashboard.
 
 ### Toggle
 
@@ -53,5 +52,6 @@ Create an array of selections available with a checkbox. Best used for multiple 
 
 Create an array of selections available with a radio selection for when only 1 item should be chosen.
 
-### Relationship???
+### Relationship
 
+Create a one-to-one or a one-to-many relationship between another content type or a user role.
