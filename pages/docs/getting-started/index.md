@@ -23,7 +23,7 @@ To add a part to your content type, click the Add button. Clicking on the new pa
 * __Label__ - The display name of this part of the content. Using the blog post example, this may be Title.  
 * __Name__ - The name you will use to access this part of the content through the API. This should be a slugged name.  
 * __Hint__ - Used as helper text for a user to know what to enter into this part of the content.  
-* __Required?__ - Choose if this should be a required field when entering content into this part. If left blank, you will not be able to save the content.  
+* __Required?__ - Choose if this should be a required field when entering content into this part. When selected, if left blank, you will not be able to save the content.  
 * __Display Size__ - The display width of the part in the dashboard. The dashboard uses a 3 column grid to display content, which can be customized to a 2 or 1 column grid in the content type settings.  
 * __Type__ - Set the type of content this part will contain. For more information here, please see the [Content Type Reference](/docs/content-types/) page
 * __Default Value__ - If you would like this content to have a default value, you may set this here.
