@@ -43,3 +43,7 @@ There are many different options available to both content types and their parts
 
 After you have created a content type, it will appear in the Fridge sidebar. Clicking on the content type displays a list of all content of that type, as well as ways to create new content. When creating a new piece of content of a particular type, all of the content parts from that type are presented as input fields in a beautiful rich layout.
 
+###Edit Model
+
+The Edit Model button at the top of a content type allows you to modify the parts in that conent type. The resulting options will be identical to the ones found when you first created the content type.  
+
