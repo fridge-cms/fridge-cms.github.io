@@ -47,3 +47,7 @@ After you have created a content type, it will appear in the Fridge sidebar. Cli
 
 The Edit Model button at the top of a content type allows you to modify the parts in that conent type. The resulting options will be identical to the ones found when you first created the content type.  
 
+## Settings
+
+The Settings content type functions in exactly the same way as a normal content type, but should be used for global content for your application. For instance, this is where you might put copyright information, footer links, or a sitewide logo.
+
