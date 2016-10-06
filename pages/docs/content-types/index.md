@@ -4,6 +4,8 @@ order: 2
 published: true
 ---
 
+## Parts
+
 ### Text  
 
 A basic text input field best used for creating titles or simple names.
@@ -55,3 +57,6 @@ Create an array of selections available with a radio selection for when only 1 i
 ### Relationship
 
 Create a one-to-one or a one-to-many relationship between another content type or a user role.
+
+## Options
+
