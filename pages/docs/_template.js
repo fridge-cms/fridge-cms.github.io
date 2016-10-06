@@ -19,21 +19,16 @@ export default class Template extends Component {
   }
 
   render () {
-    let childPages = config.docPages.map((p) => {
-      const page = this.props.route.pages.filter(page => page.path === p).shift()
-      return {
-        title: page.data.title,
-        path: page.path,
-        toc: page.data.toc
-      }
-    })
-    childPages = sortBy(childPages, child => child.order)
+    const {route: {pages}} = this.props
 
-    const docOptions = childPages.map(child => {
+    const childPages = pages.filter(page => page.path.match(/^\/docs\//)).map(page => ({...page.data, path: page.path}))
+    const sortedPages = sortBy(childPages, page => page.order)
+
+    const docOptions = sortedPages.map(child => {
       return <option key={child.path} value={child.path}>{child.title}</option>
     })
 
-    const docPages = childPages.map(child => {
+    const docPages = sortedPages.map(child => {
       const isActive = prefixLink(child.path) === this.props.location.pathname
       return <li key={child.path} style={{marginBottom: rhythm(1 / 2)}}>
         <Link to={prefixLink(child.path)} activeClassName='active' onlyActiveOnIndex>

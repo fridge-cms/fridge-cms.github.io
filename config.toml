@@ -1,6 +1,1 @@
 siteTitle="Fridge"
-docPages = [
-  "/docs/",
-  "/docs/getting-started/",
-  "/docs/api/"
-]

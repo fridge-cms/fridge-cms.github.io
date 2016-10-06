@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom'
 
 export default class Toc extends Component {
   static propTypes = {
-    body: PropTypes.string.required
+    body: PropTypes.string.isRequired
   }
 
   componentDidMount () {
