@@ -12,7 +12,7 @@ export default [
   },
   {
     id: 'micro', name: 'Micro',
-    price: 12,
+    price: 9,
     description: '',
     details: [
       '1 Fridge',
@@ -22,7 +22,7 @@ export default [
   },
   {
     id: 'basic', name: 'Basic',
-    price: 34,
+    price: 29,
     description: '',
     details: [
       '3 Fridges',
@@ -32,7 +32,7 @@ export default [
   },
   {
     id: 'standard', name: 'Standard',
-    price: 58,
+    price: 49,
     description: '',
     details: [
       '5 Fridges',

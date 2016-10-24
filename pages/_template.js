@@ -1,6 +1,7 @@
 /* global Typekit */
 import React, { Component, PropTypes } from 'react'
 import Footer from '../components/Footer'
+import cookie from 'cookie'
 
 // Style code
 import 'css/railscasts.css'
@@ -21,15 +22,10 @@ export default class Template extends Component {
 
   componentDidMount () {
     Typekit.load({async: false})
-
-    // check if logged in to FridgeCMS
-    const loginCheck = document.createElement('iframe')
-    loginCheck.src = 'https://fridgecms.com/login?redirect=/fridge_logo.svg'
-    loginCheck.style = 'display: none'
-    loginCheck.onload = e => {
+    const cookies = cookie.parse(document.cookie)
+    if (cookies.logged_in && cookies.logged_in === true) {
       this.setState({loggedIn: true})
     }
-    document.body.appendChild(loginCheck)
   }
 
   render () {

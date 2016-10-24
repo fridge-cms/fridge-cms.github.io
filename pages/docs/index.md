@@ -3,7 +3,7 @@ title: Introduction
 order: 0
 ---
 
-Welcome to **Fridge**! Here will you find everything you need to understand Fridge and get started using it.
+> Welcome to **Fridge**! Here will you find everything you need to understand Fridge and get started using it.
 
 ## What is Fridge?
 
