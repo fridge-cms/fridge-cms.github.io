@@ -110,6 +110,8 @@
         color: #fff
 
 .toc
+  display: none
+
   a
     text-decoration: none
 
@@ -126,6 +128,9 @@
 
   .active > ul
     display: block
+
+.active + .toc
+  display: block
 
 @media (min-width: 960px)
   .api-content

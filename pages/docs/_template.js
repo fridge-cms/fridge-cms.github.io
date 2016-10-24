@@ -1,10 +1,8 @@
 import React, { Component, PropTypes } from 'react'
-import Toc from '../../components/Toc'
-import { prefixLink } from 'gatsby-helpers'
+import DocsLink from '../../components/DocsLink'
 import { Link } from 'react-router'
 import { Breakpoint } from 'react-responsive-grid'
 import sortBy from 'lodash/collection/sortBy'
-import { config } from 'config'
 
 import typography from 'utils/typography'
 const { rhythm } = typography
@@ -18,24 +16,22 @@ export default class Template extends Component {
     return this.context.router.push(e.target.value)
   }
 
+  renderNav (pages, path) {
+    return pages.filter(p => p.path.match(path)).map(page => {
+      return <DocsLink page={page} key={page.path} />
+    })
+  }
+
   render () {
     const {route: {pages}} = this.props
 
-    const childPages = pages.filter(page => page.path.match(/^\/docs\//)).map(page => ({...page.data, path: page.path}))
-    const sortedPages = sortBy(childPages, page => page.order)
+    const childPages = sortBy(
+      pages.filter(page => page.path.match(/^\/docs\//)).map(page => ({...page.data, path: page.path})),
+      page => page.order
+    )
 
-    const docOptions = sortedPages.map(child => {
+    const docOptions = childPages.map(child => {
       return <option key={child.path} value={child.path}>{child.title}</option>
-    })
-
-    const docPages = sortedPages.map(child => {
-      const isActive = prefixLink(child.path) === this.props.location.pathname
-      return <li key={child.path} style={{marginBottom: rhythm(1 / 2)}}>
-        <Link to={prefixLink(child.path)} activeClassName='active' onlyActiveOnIndex>
-          {child.title}
-        </Link>
-        {(isActive && child.toc) && <Toc body={child.toc} />}
-      </li>
     })
 
     return <div>
@@ -45,7 +41,13 @@ export default class Template extends Component {
             <Link to='/' className='branding'>
               <img src='/img/Fridge-dark.svg' alt='Fridge CMS' />
             </Link>
-            <ul>{docPages}</ul>
+            <div className='docs-section'>
+              <Link to='/docs/' activeClassName='active' onlyActiveOnIndex>Home</Link>
+            </div>
+            <div className='docs-section'>Introduction</div>
+            <ul>{this.renderNav(childPages, /introduction/)}</ul>
+            <div className='docs-section'>Development</div>
+            <ul>{this.renderNav(childPages, /development/)}</ul>
           </div>
           <div style={{marginLeft: `calc(${rhythm(8)})`}} className='docs'>
             {this.props.children}

@@ -17,21 +17,10 @@ It's easy to go from zero to a fully customized Fridge in just a few steps:
 2. Add content
 3. Use the Fridge API to pull content into your projects
 
-Have a look at our [Getting Started](/docs/getting-started/) guide for more information. 
+Have a look at our [Getting Started](/docs/introduction/getting-started/) guide for more information. 
 
 ## The Fridge Philosophy?
 
-
-
-## Libraries
-
-* [Javascript](https://github.com/fridge-cms/fridge_api.js)
-* [Ruby](https://github.com/fridge-cms/fridge_api.rb)
-* [PHP](https://github.com/fridge-cms/fridge_api.php)
-
-## Integrations
-
-* [Jekyll](https://github.com/fridge-cms/jekyll-fridge)
 
 ## Need Help?
 
