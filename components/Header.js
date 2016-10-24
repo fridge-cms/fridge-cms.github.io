@@ -1,9 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import { rhythm, fontSizeToPx } from 'utils/typography';
 
 export default class Header extends Component {
-  render() {
+  static contextTypes = {
+    loggedIn: PropTypes.bool
+  }
+
+  render () {
+    const {loggedIn} = this.context
+    const linkTitle = loggedIn ? 'Open dashboard' : 'Sign in'
+
     return <header {...this.props}>
       <div className='container'>
         <Link to='/' className='branding'>
@@ -12,7 +18,7 @@ export default class Header extends Component {
         <nav>
           <Link to='/docs/'>Documentation</Link>
           <Link to='/blog/'>Blog</Link>
-          <a className='action' href='https://fridgecms.com'>Sign in</a>
+          <a className='action' href='https://fridgecms.com'>{linkTitle}</a>
         </nav>
       </div>
       {this.props.children}
