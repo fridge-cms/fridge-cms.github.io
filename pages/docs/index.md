@@ -13,7 +13,7 @@ Fridge is a CMS platform that is designed for any kind of content. Content is co
 
 Fridge makes no assumptions about what kind of content you might be creating. For this reason, when creating a new Fridge the different content structures must be defined before content can be created. Fridge organizes all of its content into __Content Types__. Each content type describes its content with __Parts__. When you create a new __Content__ entry for a content type, each part is assigned a value. Here's a diagram to help explain:
 
-![Fridge Content Diagram](/docs/introduction/fridge_diagram.png)
+![Fridge Content Diagram](/docs/fridge_diagram.png)
 
 ## Getting Started
 
