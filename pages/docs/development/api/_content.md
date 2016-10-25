@@ -1207,6 +1207,66 @@ filename | The name of the file. __Required__
 
 ## Public Content creation
 
+```shell
+$ curl https://api.fridgecms.com/v1/public/post \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d content[10]="My Post Title" \
+    -d content[11]="2015-02-01" \
+    -d active=1
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+post = client.post("public/post", {
+  :content {
+    :title => "My Post Title",
+    :published => "2015-02-01",
+  },
+  :active => true
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$post = $client->post("public/post", array(
+  "content" => array(
+    "title" => "My Post Title",
+    "published" => "2015-02-01"
+  ),
+  "active" => true
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 15,
+  "site_id": 1,
+  "document_definition_id": 3,
+  "date_created": "2015-02-01 01:00:00",
+  "date_updated": "2015-02-01 01:00:00",
+  "display_order": 0,
+  "active": 1,
+  "content": {
+    "10": "My Post Title",
+    "11": "2015-02-01"
+  },
+  "slug": "my_post_title",
+  "user_id": 90
+}
+```
+
 If a content type allows for public content creation by setting the `api_create` option to `true`, a valid public key authorized token can create content.
 
 ### Arguments
@@ -1223,6 +1283,73 @@ content | An array or hash of content values paired to part identifiers. __Requi
 # Settings
 
 ## Create a new Setting set
+
+```shell
+$ curl https://api.fridgecms.com/v1/settings \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d name="General"
+    -d parts[]="{\"name\":\"business_address\", \"label\":\"Business Address\", \"type\": \"text\"}"
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+settings = client.post("settings", {
+  :name => "General",
+  :parts => [
+    {
+      name: => "business_address",
+      label: => "Business Address",
+      type: => "text"
+    }
+  ]
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$settings = $client->post("settings", array(
+  "name" => "General",
+  "parts" => array(
+    array(
+      "name" => "business_address",
+      "label" => "Business Address",
+      "type" => "text"
+    )
+  )
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 6,
+  "site_id": 1,
+  "name": "General",
+  "slug": "general",
+  "date_created": "2015-01-01 01:00:00",
+  "date_updated": "2015-01-01 01:00:00",
+  "display_order": 0,
+  "options": {},
+  "parts": [
+    {
+      "name": "business_address",
+      "label": "Business Address",
+      "type": "text"
+    }
+  ]
+}
+```
 
 Creates a new settings set.
 
@@ -1241,6 +1368,53 @@ parts | An array of part definition objects. __Required__
 
 ## Retrieve an existing Setting set
 
+```shell
+$ curl https://api.fridgecms.com/v1/settings/general?site=1 \
+    -H "Authorization: token xxxxxxxxxxx" \
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+general_settings = client.get("settings/general")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$generalSettings = $client->get("settings/general");
+```
+
+> Example Response:
+
+```json
+{
+  "id": 6,
+  "site_id": 1,
+  "name": "General",
+  "slug": "general",
+  "date_created": "2015-01-01 01:00:00",
+  "date_updated": "2015-01-01 01:00:00",
+  "display_order": 0,
+  "options": {},
+  "parts": [
+    {
+      "name": "business_address",
+      "label": "Business Address",
+      "type": "text"
+    }
+  ],
+  "settings": []
+}
+```
+
 Retrieve the details of an existing setting set. You must supply the unique site id and setting set id.
 
 ### Arguments
@@ -1255,6 +1429,69 @@ identifier | The id or slug of the setting set. __Required__
 `GET https://api.fridgecms.com/v1/settings/{identifier}`
 
 ## Update a Setting set
+
+```shell
+$ curl https://api.fridgecms.com/v1/settings/general \
+    -X PUT \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d settings[business_address]="451 Verdana Drive"
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+client.put("settings/general", {
+  :settings => {
+    :business_address => "451 Verdana Drive"
+  }
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$client->put("settings/general", array(
+  "settings" => array(
+    "business_address" => "451 Verdana Drive"
+  )
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 6,
+  "site_id": 1,
+  "name": "General",
+  "slug": "general",
+  "date_created": "2015-01-01 01:00:00",
+  "date_updated": "2015-01-01 01:00:00",
+  "display_order": 0,
+  "options": {},
+  "parts": [
+    {
+      "name": "business_address",
+      "label": "Business Address",
+      "type": "text"
+    }
+  ],
+  "settings": [
+    {
+      "name": "business_address",
+      "value": "451 Verdana Drive"
+    }
+  ]
+}
+```
 
 Updates the specified setting set by setting the values of the parameters passed.
 
@@ -1274,6 +1511,40 @@ settings | An array or hash of values paired to part identifiers.
 
 ## Delete a Setting set
 
+```shell
+$ curl https://api.fridgecms.com/v1/settings/general \
+    -X DELETE \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+client.delete("settings/general")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$client->delete("settings/general");
+```
+
+> Example Response:
+
+```json
+{
+  "status": "200"
+}
+```
+
 Permanently deletes a setting set. It cannot be undone.
 
 ### Arguments
@@ -1288,6 +1559,90 @@ identifier | The id of the setting set to be deleted. __Required__
 `DELETE https://api.fridgecms.com/v1/settings/{identifier}`
 
 ## List all Settings
+
+```shell
+$ curl https://api.fridgecms.com/v1/settings \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+settings = client.get("settings")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$settings = $client->get("settings");
+```
+
+> Example Response:
+
+```json
+[
+  {
+    "id": 6,
+    "site_id": 1,
+    "name": "General",
+    "slug": "general",
+    "date_created": "2015-01-01 01:00:00",
+    "date_updated": "2015-01-01 02:00:00",
+    "display_order": 0,
+    "options": {},
+    "parts": [
+      {
+        "id": "15",
+        "name": "business_address",
+        "label": "Business Address",
+        "type": "text"
+      },
+    ],
+    "settings": [
+      {
+        "name": "business_address",
+        "part_id": "15",
+        "value": "451 Verdana Drive"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "site_id": 1,
+    "name": "Social",
+    "slug": "social",
+    "date_created": "2015-01-01 01:00:00",
+    "date_updated": "2015-01-01 01:00:00",
+    "display_order": 2,
+    "options": {},
+    "parts": [
+      {
+        "id": "17",
+        "name": "Twitter",
+        "label": "twitter",
+        "hint": "Link to twitter profile",
+        "type": "text",
+        "required": true
+      }
+    ],
+    "settings": [
+      {
+        "name": "twitter",
+        "part_id": "17",
+        "value": "https://twitter.com/fridgecms"
+      }
+    ]
+  }
+]
+```
 
 Retrieve a list of setting sets.
 
@@ -1305,6 +1660,73 @@ site | The id of the site to retrieve setting sets from. __Required__
 
 ## Create a new User Role
 
+```shell
+$ curl https://api.fridgecms.com/v1/roles \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d name="Member"
+    -d parts[]="{\"name\":\"photo\", \"label\":\"Photo\", \"type\": \"image\"}"
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+member_role = client.post("roles", {
+  :name => "Member",
+  :parts => [
+    {
+      name: => "photo",
+      label: => "Photo",
+      type: => "image"
+    }
+  ]
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$memberRole = $client->post("roles", array(
+  "name" => "Member",
+  "parts" => array(
+    array(
+      "name" => "photo",
+      "label" => "Photo",
+      "type" => "image"
+    )
+  )
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 7,
+  "site_id": 1,
+  "name": "Member",
+  "slug": "member",
+  "date_created": "2015-01-01 01:00:00",
+  "date_updated": "2015-01-01 01:00:00",
+  "display_order": 0,
+  "options": {},
+  "parts": [
+    {
+      "name": "photo",
+      "label": "Photo",
+      "type": "image"
+    }
+  ]
+}
+```
+
 Creates a new user role.
 
 ### Arguments
@@ -1316,12 +1738,63 @@ name | The name of the user role. __Required__
 display_order | A zero-based number specifying the default order in which the user role is listed.
 options | An object of key/value pair options.
 parts | An array of part definition objects. __Required__
+admin_access | Control if this role has access to the Fridge dashboard. __Admins only__
+permissions | An object of role-based permissions. __Admins only__
+
 
 ### HTTP Request
 
 `POST https://api.fridgecms.com/v1/roles`
 
 ## Retrieve an existing User Role
+
+```shell
+$ curl https://api.fridgecms.com/v1/roles/7?site=1 \
+    -H "Authorization: token xxxxxxxxxxx" \
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+member_role = client.get("roles/member")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$memberRole = $client->get("roles/member");
+```
+
+> Example Response:
+
+```json
+{
+  "id": 7,
+  "site_id": 1,
+  "name": "Member",
+  "slug": "member",
+  "date_created": "2015-01-01 01:00:00",
+  "date_updated": "2015-01-01 01:00:00",
+  "display_order": 0,
+  "options": {},
+  "parts": [
+    {
+      "name": "photo",
+      "label": "Photo",
+      "type": "image"
+    }
+  ],
+  "admin_access": false,
+  "permissions": {}
+}
+```
 
 Retrieve the details of an existing user role. You must supply the unique site id and user role id or slug.
 
@@ -1338,6 +1811,69 @@ identifier | The ID or slug of the user role to retrieve. __Required__
 
 ## Update a User Role
 
+```shell
+$ curl https://api.fridgecms.com/v1/roles/7 \
+    -X PUT \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d permissions="{\"content_type\": [\"read\"], \"content\": [\"read\", \"create\", \"update\", \"delete\"]}"
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+client.put("roles/member", {
+  :permissions => {
+    :content_type => [:read],
+    :content => [:read, :create, :update, :delete]
+  }
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$client->put("roles/member", array(
+  "permissions" => array(
+    "content_type" => array("read"),
+    "content" => array("read", "create", "update", "delete")
+  )
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 7,
+  "site_id": 1,
+  "name": "Member",
+  "slug": "member",
+  "date_created": "2015-01-01 01:00:00",
+  "date_updated": "2015-01-01 02:00:00",
+  "display_order": 0,
+  "options": {},
+  "parts": [
+    {
+      "name": "photo",
+      "label": "Photo",
+      "type": "image"
+    }
+  ],
+  "admin_access": false,
+  "permissions": {
+    "content_type": ["read"],
+    "content": ["read", "create", "update", "delete"]
+  }
+}
+```
 Updates the specified user role by setting the values of the parameters passed.
 
 ### Arguments
@@ -1355,6 +1891,40 @@ parts | An array of part definition objects.
 `PUT https://api.fridgecms.com/v1/roles/{identifier}`
 
 ## Delete a User Role
+
+```shell
+$ curl https://api.fridgecms.com/v1/roles/7 \
+    -X DELETE \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+client.delete("roles/member")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$client->delete("roles/member");
+```
+
+> Example Response:
+
+```json
+{
+  "status": "200"
+}
+```
 
 Permanently deletes a user role. It cannot be undone.
 
@@ -1375,6 +1945,73 @@ id | The id of the user role to be deleted. __Required__
 
 ## List all User Roles
 
+```shell
+$ curl https://api.fridgecms.com/v1/roles \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+user_roles = client.get("roles")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$userRoles = $client->get("roles");
+```
+
+> Example Response:
+
+```json
+[
+  {
+    "id": 1,
+    "site_id": 1,
+    "name": "Admin",
+    "slug": "admin",
+    "date_created": "2015-01-01 01:00:00",
+    "date_updated": "2015-01-01 02:00:00",
+    "display_order": 0,
+    "options": {},
+    "parts": [],
+    "admin_access": true,
+    "permissions": {admin: true}
+  },
+  {
+    "id": 7,
+    "site_id": 1,
+    "name": "Member",
+    "slug": "member",
+    "date_created": "2015-01-01 01:00:00",
+    "date_updated": "2015-01-01 01:00:00",
+    "display_order": 1,
+    "options": {},
+    "parts": [
+      {
+        "name": "photo",
+        "label": "Photo",
+        "type": "image",
+      }
+    ],
+    "admin_access": false,
+    "permisisons": {
+      "content_type": ["read"],
+      "content": ["read", "create", "update", "delete"]
+    }
+  }
+]
+```
+
 Retrieve a list of user roles.
 
 ### Arguments
@@ -1390,6 +2027,52 @@ site | The id of the site to retrieve user roles from. __Required__
 # Users
 
 ## Create a new User
+
+```shell
+$ curl https://api.fridgecms.com/v1/users/role/member \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d email="support@fridgecms.com" \
+    -d active=1
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+user = client.post("users/role/member", {
+  :email => "support@fridgecms.com",
+  :active => true
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$user = $client->post("users/role/member", array(
+  "email" => "support@fridgecms.com",
+  "active" => true
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 21,
+  "date_created": "2015-02-01 01:00:00",
+  "date_updated": "2015-02-01 01:00:00",
+  "active": true,
+  "content": [],
+  "email": "support@fridgecms.com"
+}
+```
 
 Creates a new user.
 
@@ -1414,6 +2097,44 @@ If you create a new user that has the same email as another user from a differen
 
 ## Retrieve an existing User
 
+```shell
+$ curl https://api.fridgecms.com/v1/users/21 \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+user = client.get("users/21")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$user = $client->get("users/21");
+```
+
+> Example Response:
+
+```json
+{
+  "id": 21,
+  "date_created": "2015-02-01 01:00:00",
+  "date_updated": "2015-02-01 01:00:00",
+  "active": true,
+  "content": [],
+  "email": "support@fridgecms.com"
+}
+```
+
 Retrieve the details of an existing user. You must supply the unique site id and user id.
 
 ### Arguments
@@ -1428,6 +2149,50 @@ identifier | The ID of the user. __Required__
 `GET https://api.fridgecms.com/v1/users/{identifier}`
 
 ## Update a User
+
+```shell
+$ curl https://api.fridgecms.com/v1/users/21 \
+    -X PUT \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+    -d active=0
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+user = client.put("users/21", {
+  :active => false
+})
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$user = $client->put("users/21", array(
+  "active" => false
+));
+```
+
+> Example Response:
+
+```json
+{
+  "id": 21,
+  "date_created": "2015-02-01 01:00:00",
+  "date_updated": "2015-02-01 01:00:00",
+  "active": false,
+  "content": [],
+  "email": "support@fridgecms.com"
+}
+```
 
 Updates the specified user by setting the values of the parameters passed.
 
@@ -1448,6 +2213,40 @@ content | An array or hash of content values paired to part identifiers. __Requi
 
 ## Delete a User
 
+```shell
+$ curl https://api.fridgecms.com/v1/users/21 \
+    -X DELETE \
+    -H "Authorization: token xxxxxxxxxxx" \
+    -d site=1 \
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+client.delete("users/21")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$client->delete("users/21");
+```
+
+> Example Response:
+
+```json
+{
+  "status": "200"
+}
+```
+
 Permanently deletes a user. It cannot be undone.
 
 ### Arguments
@@ -1462,6 +2261,45 @@ identifier | The id of the user to be deleted. __Required__
 `DELETE https://api.fridgecms.com/v1/user/{identifier}`
 
 ## List all Users
+
+```shell
+$ curl https://api.fridgecms.com/v1/users?site=1&role=7 \
+    -H "Authorization: token xxxxxxxxxxx" \
+```
+
+```ruby
+require 'fridge_api'
+
+client = FridgeApi.client({
+  :client_id => "sk_xxxxxxxxxxx"
+  :client_secret => "xxxxxxxxxxx"
+})
+
+members = client.get("users/role/member")
+```
+
+```php
+<?php
+
+$client = new \FridgeApi\Client("sk_xxxxxxxxxxx", "xxxxxxxxxxx");
+
+$members = $client->get("users/role/member");
+```
+
+> Example Response:
+
+```json
+[
+  {
+    "id": 21,
+    "date_created": "2015-02-01 01:00:00",
+    "date_updated": "2015-02-01 02:00:00",
+    "active": false,
+    "content": [],
+    "email": "support@fridgecms.com"
+  }
+]
+```
 
 Retrieve a list of users.
 
