@@ -9,6 +9,12 @@ order: 0
 
 Fridge is a CMS platform that is designed for any kind of content. Content is configured and managed using Fridge's content application, and content is pulled down through the Fridge API and into various kinds of applications such as websites and mobile applications.
 
+## Content
+
+Fridge makes no assumptions about what kind of content you might be creating. For this reason, when creating a new Fridge the different content structures must be defined before content can be created. Fridge organizes all of its content into __Content Types__. Each content type describes its content with __Parts__. When you create a new __Content__ entry for a content type, each part is assigned a value. Here's a diagram to help explain:
+
+![Fridge Content Diagram](/docs/introduction/fridge_diagram.png)
+
 ## Getting Started
 
 It's easy to go from zero to a fully customized Fridge in just a few steps:
@@ -17,9 +23,7 @@ It's easy to go from zero to a fully customized Fridge in just a few steps:
 2. Add content
 3. Use the Fridge API to pull content into your projects
 
-Have a look at our [Getting Started](/docs/introduction/getting-started/) guide for more information. 
-
-## The Fridge Philosophy?
+Have a look at our [Getting Started](/docs/introduction/getting-started/) guide for more information.
 
 
 ## Need Help?

@@ -3,7 +3,7 @@ title: Getting Started
 order: 1
 ---
 
-
+Fridge has been designed to make it easy to create a custom and beautiful content experience. Use this page as a guide to walk through setting up your very own Fridge.
 
 ## Content Types
 
@@ -17,18 +17,13 @@ To create a new content type, click the + symbol next to the Content title in th
 
 ### Adding Parts
 
+![Adding Part](adding_parts.png)
+
 _Parts_ are a piece of content used to describe a content type. For example, if you are reading a website article, you can think of the _Title, Url, Meta Title, Author, Date, Body, Comments_ as different parts of the article. There's no limit to how many parts you can add to any particular content type. Construct content types as simple or as complex as you need.
 
-To add a part to your content type, click the Add button. Clicking on the new part will open up the following options:
+All of the different parts available are explained in the [Parts Reference](/docs/introduction/parts/).
 
-* __Label__ - The display name of this part of the content. Using the blog post example, this may be Title.
-* __Name__ - The name you will use to access this part of the content through the API. This should be a slugged name.
-* __Hint__ - Used as helper text for a user to know what to enter into this part of the content.  
-* __Required?__ - Choose if this should be a required field when entering content into this part. When selected, if left blank, you will not be able to save the content.
-* __Display Size__ - The display width of the part in the dashboard. The dashboard uses a 3 column grid to display content, which can be customized to a 2 or 1 column grid in the content type settings.  
-* __Type__ - Set the type of content this part will contain. For a list of all available parts, please see the [Parts Reference](/docs/introduction/parts/) page.
-
-Clicking again on the top bar of the Part will close the menu. Continue to add some more parts to your content type! 
+To add a part to your content type, click the Add button. Click the new part row to toggle the part options.
 
 ### Options
 
@@ -40,13 +35,19 @@ There are many different options available to both content types and their parts
 
 ## Creating Content
 
+![Adding Content](adding_content.png)
+
 After you have created a content type, it will appear in the Fridge sidebar. Clicking on the content type displays a list of all content of that type, as well as ways to create new content. When creating a new piece of content of a particular type, all of the content parts from that type are presented as input fields in a beautiful rich layout.
 
-### Edit Model
+Once you've created some content, it will be laid out on the content type page. Use the `Edit Model` button to make changes to the parts and options of the content type. Use the `Add New` button to add a new content entry.
 
-The Edit Model button at the top of a content type allows you to modify the parts in that conent type. The resulting options will be identical to the ones found when you first created the content type.  
+## Fridge API
 
-## Settings
+When it is time to starting pulling Fridge content into a project, Fridge provides a robust API to access everything. To get started, you'll need to copy an access key from the *Fridge Settings* page. Clicking on your Fridge's name in the top-left corner will present a dropdown with a link to this page.
 
-The Settings content type functions in exactly the same way as a normal content type, but should be used for global content for your application. For instance, this is where you might put copyright information, footer links, or a sitewide logo.
+There are many ways to integrate Fridge content directly into your projects!
 
+* __[API Libraries](/docs/development/libraries/)__ - Easily bring Fridge content into an existing programming language
+* __[Integrations](/docs/development/integrations/)__ - Use existing tools you're already familiar with and let Fridge power the dynamic content.
+
+We're always working to make the integration between existing technology and Fridge content as easy as possible.
