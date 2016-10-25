@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react'
 import DocsLink from '../../components/DocsLink'
 import { Link } from 'react-router'
 import { Breakpoint } from 'react-responsive-grid'
-import sortBy from 'lodash/collection/sortBy'
 
 import typography from 'utils/typography'
 const { rhythm } = typography
@@ -25,10 +24,9 @@ export default class Template extends Component {
   render () {
     const {route: {pages}} = this.props
 
-    const childPages = sortBy(
-      pages.filter(page => page.path.match(/^\/docs\//)).map(page => ({...page.data, path: page.path})),
-      page => page.order
-    )
+    const childPages = pages
+      .filter(page => page.path.match(/^\/docs\//)).map(page => ({...page.data, path: page.path}))
+      .sort((a, b) => a.order - b.order)
 
     const docOptions = childPages.map(child => {
       return <option key={child.path} value={child.path}>{child.title}</option>

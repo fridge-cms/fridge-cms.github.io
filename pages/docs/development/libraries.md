@@ -7,7 +7,7 @@ order: 1
 
 Install using `npm`
 
-```bash
+```shell
 $ npm install fridge_api
 ```
 
@@ -33,7 +33,7 @@ View the source on [Github](https://github.com/fridge-cms/fridge_api.rb)
 
 Install using Composer:
 
-```bash
+```shell
 $ composer require fridge/api@stable
 ```
 

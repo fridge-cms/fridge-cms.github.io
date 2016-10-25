@@ -18,7 +18,7 @@ export default class Header extends Component {
         <nav>
           <Link to='/docs/'>Documentation</Link>
           <Link to='/blog/'>Blog</Link>
-          <a className='action' href='https://fridgecms.com'>{linkTitle}</a>
+          <a className='action' href='https://app.fridgecms.com'>{linkTitle}</a>
         </nav>
       </div>
       {this.props.children}

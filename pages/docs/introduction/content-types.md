@@ -1,62 +1,55 @@
 ---
 title: Content Type Reference
-order: 2
-published: true
+order: 3
 ---
 
-## Parts
+Content types have many different options for completely customizing how content is displayed within Fridge.
 
-### Text  
+---
 
-A basic text input field best used for creating titles or simple names.
+## Display Options
 
-### Textarea
+### Sort Method
 
-Text input field for extensive text input such as a description in a form.
+Control the default way content is sorted.
 
-### Date
+* __Date__ - Content is sorted using its created date.
+* __Manual__ - Content is sorted manually. Use the drag toggle to reorder content.
+* __Hierarchy__ - Content is organized into a tree. Use the drag toggle to organize.
 
-A field specifically for adding a date in MM/DD/YYYY format.
+### Sort Order
 
-### Hidden
+Change the direction of the sorted content. If using `Manual` or `Hierarchy` sort methods, the sort order should be *Ascending*.
 
-Can be set for hidden data or as read-only data. This part works well with data that is tied to another integration and should not be editable through the dashboard.
+### Layout
 
-### Toggle
+The display layout controls how the content should be displayed in Fridge's dashboard.
 
-Used for setting something to a value of 1 or 0.
+* __Default__ - A standard layout displaying content in rows.
+* __Card__ - Grid based layout using cards to display content. Great for displaying images.
+* __Table__ - Data focused layout that supports showing multiple columns of data for each row of content.
+* __Tree__ - Organizes content into a tree hierarchy using the default layout. *This layout is required when using the Hierarchy sort method*.
 
-### Color
+### Fields
 
-Set a hex color value using your OS color picker.
+If using a display layout that supports showing multiple fields, you can pick and choose which fields will be displayed.
 
-### Content
+### Columns
 
-Rich Content input field that uses markdown, rich text editor, or code for formatting. 
+Control how many columns are used in the grid when viewing the content edit screen.
 
-### File
+---
 
-For adding any non-image file types. Size and allowed file types can be set.
+## API Options
 
-### Image
+### API Access
 
-Add images to your content type. File size limit can be set.
+If this option is checked, this content will be available through the API using the publishable key. All content is entirely accessible when using the secret key.
 
-### Select
+### Public Access
 
-Create an array of selections available to choose from in a dropdown. Multiple selections and ability to add an item can be set, as well as choosing a default selection.
+If checked content of this type will be able to be created using the public API endpoint. See [Public Content Creation](/docs/development/api/#public-content-creation) in the API reference for more information.
 
-### Checkbox
+### Notify on creation
 
-Create an array of selections available with a checkbox. Best used for multiple selections.
-
-### Radio
-
-Create an array of selections available with a radio selection for when only 1 item should be chosen.
-
-### Relationship
-
-Create a one-to-one or a one-to-many relationship between another content type or a user role.
-
-## Options
-
+Have Fridge optionally send an email notification when content is created using the public API endpoint. This works perfectly when creating contact forms or user-based submissions.
