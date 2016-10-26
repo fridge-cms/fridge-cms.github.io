@@ -23,8 +23,7 @@ export default class Template extends Component {
   componentDidMount () {
     Typekit.load({async: false})
     const cookies = cookie.parse(document.cookie)
-    console.log(cookies)
-    if (cookies.logged_in && cookies.logged_in === true) {
+    if (cookies.logged_in && cookies.logged_in === 'true') {
       this.setState({loggedIn: true})
     }
   }
