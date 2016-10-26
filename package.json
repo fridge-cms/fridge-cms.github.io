@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && surge ./public hilarious-river.surge.sh",
+    "deploy": "gatsby build && s3cmd sync ./public/ s3://fridgecms.com --delete-removed --acl-public",
     "start": "gatsby develop"
   },
   "keywords": [],
