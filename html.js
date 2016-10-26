@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DocumentTitle from 'react-document-title'
+import Helmet from 'react-helmet'
 import { prefixLink } from 'gatsby-helpers'
 
 import typography from './utils/typography'
@@ -11,10 +11,7 @@ export default class Html extends Component {
   }
 
   render () {
-    let title = DocumentTitle.rewind()
-    if (this.props.title) {
-      title = this.props.title
-    }
+    const head = Helmet.rewind()
 
     let css
     if (process.env.NODE_ENV === 'production') {
@@ -26,7 +23,8 @@ export default class Html extends Component {
         <meta charSet='utf-8' />
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='user-scalable=no width=device-width, initial-scale=1.0 maximum-scale=1.0' />
-        <title>{title}</title>
+        {head.title.toComponent()}
+        {head.meta.toComponent()}
         <link rel='shortcut icon' href={this.props.favicon} />
         <TypographyStyle typography={typography} />
         {css}

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import {Container, Grid, Breakpoint, Span} from 'react-responsive-grid'
+import Helmet from 'react-helmet'
+import {Container, Grid, Span} from 'react-responsive-grid'
 import Header from '../components/Header'
 import Plan from '../components/Plan'
 import plans from '../utils/plans'
+import { config } from 'config'
 
 export default class Home extends Component {
   state = {
@@ -18,6 +20,13 @@ export default class Home extends Component {
 
     return (
       <div>
+        <Helmet
+          title={config.siteTitle}
+          meta={[
+            {name: 'description', content: 'Fridge CMS'},
+            {name: 'keywords', content: 'fridge, cms, content management system, api'}
+          ]}
+        />
         <Header className='home'>
           <div className='hero'>
             <h1><strong>Fridge.</strong> Real content management.</h1>
