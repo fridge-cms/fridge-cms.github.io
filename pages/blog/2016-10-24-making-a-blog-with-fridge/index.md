@@ -60,12 +60,12 @@ All we need to do to complete the integration is create a layout for the content
 
 ```html
 <article>
-  <h1>{{blog_post.title}}</h1>
-  {{blog_post.body | markdownify}}
+  <h1>{{page.blog_post.title}}</h1>
+  {{page.blog_post.body | markdownify}}
 </article>
 <div id="comments">
-  {% for id in blog_post.comments %}
-    {% assign comment = site.fridge.comment[id] %}
+  {% for id in page.blog_post.comments %}
+    {% assign comment = site.fridge.content[id] %}
     <div class="comment">
       <span class="author">{{comment.name}} ({{comment.email}})</span>
       {{comment.comment | markdownify}}
