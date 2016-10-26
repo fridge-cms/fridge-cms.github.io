@@ -31,5 +31,5 @@ Have a look at our [Getting Started](/docs/introduction/getting-started/) guide 
 We're always happy to help out with code or answer any questions you might have.
 
 * [Twitter](https://twitter.com/fridgecms)
-* [Email Support](mailto:support@fridgecms.com)
+* [Email Support](mailto:help@fridgecms.com)
 * Discussion (coming soon)
