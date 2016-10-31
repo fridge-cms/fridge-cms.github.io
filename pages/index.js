@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import {Container, Grid, Span} from 'react-responsive-grid'
+import {Container, Grid, Span, Breakpoint} from 'react-responsive-grid'
 import Header from '../components/Header'
 import Plan from '../components/Plan'
 import plans from '../utils/plans'
@@ -88,7 +88,7 @@ export default class Home extends Component {
             </Span>
           </Grid>
         </Container>
-        <Container style={{maxWidth: 960}} className='prices'>
+        <Container style={{maxWidth: 980}} className='prices'>
           <div className='text-center'>
             <h2>No Nonsense Pricing</h2>
             <div className='billing-cycle-switcher'>
@@ -101,13 +101,24 @@ export default class Home extends Component {
               </div>
             </div>
           </div>
-          <Grid columns={12} gutterRatio={2}>
-            {plans.map((plan, i) => {
-              return <Span key={i} columns={3} last={i === plans.length - 1}>
-                <Plan annual={annual} {...plan} />
-              </Span>
-            })}
-          </Grid>
+          <Breakpoint minWidth={640}>
+            <Grid columns={12} gutterRatio={2}>
+              {plans.map((plan, i) => {
+                return <Span key={i} columns={3} last={i === plans.length - 1}>
+                  <Plan annual={annual} {...plan} />
+                </Span>
+              })}
+            </Grid>
+          </Breakpoint>
+          <Breakpoint maxWidth={640}>
+            <Grid columns={12} gutterRatio={2}>
+              {plans.map((plan, i) => {
+                return <Span key={i} columns={6} last={i % 2 === 0}>
+                  <Plan annual={annual} {...plan} />
+                </Span>
+              })}
+            </Grid>
+          </Breakpoint>
         </Container>
       </div>
     )
