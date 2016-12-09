@@ -113,7 +113,7 @@ export default class Home extends Component {
           <Breakpoint maxWidth={640}>
             <Grid columns={12} gutterRatio={2}>
               {plans.map((plan, i) => {
-                return <Span key={i} columns={6} last={i % 2 === 0}>
+                return <Span key={i} columns={6} last={(i + 1) % 2 === 0}>
                   <Plan annual={annual} {...plan} />
                 </Span>
               })}
