@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gatsby build && s3cmd sync ./public/ s3://fridgecms.com --delete-removed --acl-public",
-    "start": "gatsby develop"
+    "dev": "gatsby develop"
   },
   "keywords": [],
   "author": "Mike Kruk <mike@ripeworks.com>",
