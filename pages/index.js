@@ -79,7 +79,7 @@ export default class Home extends Component {
               <p>Make your dashboard your way with a wide range of customizable display options.</p>
             </Span>
             <Span columns={6}>
-              <h3>Find-grained permissions</h3>
+              <h3>Fine-grained permissions</h3>
               <p>Create and define custom permission sets that meet your specific needs. </p>
             </Span>
             <Span columns={6} last>
