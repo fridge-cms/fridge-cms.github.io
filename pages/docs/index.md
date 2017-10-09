@@ -32,4 +32,4 @@ We're always happy to help out with code or answer any questions you might have.
 
 * [Twitter](https://twitter.com/fridgecms)
 * [Email Support](mailto:help@fridgecms.com)
-* Discussion (coming soon)
+* [Stack Overflow](https://stackoverflow.com/questions/tagged/fridge) **[Ask a question](https://stackoverflow.com/questions/ask?tags=fridge)**
