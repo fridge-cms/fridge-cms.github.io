@@ -1,22 +1,14 @@
-import React, { Component, PropTypes } from 'react'
 import Toc from './Toc'
-import { prefixLink } from 'gatsby-helpers'
-import { Link } from 'react-router'
+import Link from 'next/link'
 
-export default class DocsLink extends Component {
-  static propTypes = {
-    page: PropTypes.object
-  }
+// activeClassName='active' onlyActiveOnIndex
 
-  render () {
-    const {page} = this.props
-    const pagePath = prefixLink(page.path)
-
-    return <li>
-      <Link to={pagePath} activeClassName='active' onlyActiveOnIndex>
+export default ({ page }) =>
+  <li>
+    <Link href={page.path}>
+      <a>
         {page.title}
-      </Link>
-      {(!!page.toc) && <Toc body={page.toc} />}
-    </li>
-  }
-}
+      </a>
+    </Link>
+    {(!!page.toc) && <Toc body={page.toc} />}
+  </li>

@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import { Component } from 'react'
 import { findDOMNode } from 'react-dom'
+import PropTypes from 'prop-types'
 
 export default class Toc extends Component {
   static propTypes = {
