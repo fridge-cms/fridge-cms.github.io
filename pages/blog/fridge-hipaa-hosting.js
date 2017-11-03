@@ -1,9 +1,7 @@
----
-title: Introducing HIPAA compliant Fridges
-date: 2017-5-24
-by: James Nichols
----
+import post, { getPost } from 'components/post'
+import markdown from 'markdown-in-js'
 
+export default post(getPost('fridge-hipaa-hosting'), markdown`
 Starting today Fridge now has a HIPAA compliant offering for anyone that needs to securely store PHI data.
 
 ## Encryption Everywhere
@@ -17,5 +15,4 @@ Fridge now provides audit trails for all document and user access. A key factor 
 ## Availability
 
 HIPAA compliant Fridges are available by request for professional plan accounts. Contact [support](mailto:support@fridgecms.com) to get started! 
-
-
+`)

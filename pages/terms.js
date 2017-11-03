@@ -1,12 +1,10 @@
 import Page from '../components/Page'
-import Header from '../components/Header'
 import Article from '../components/Article'
 import markdown from 'markdown-in-js'
 
 export default () =>
-  <Page>
-    <Header />
-    <Article title='Terms'>
+  <Page header>
+    <Article name='Terms'>
       {markdown`
 1. Terms
 

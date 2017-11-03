@@ -42,6 +42,54 @@ export default class Plan extends Component {
           })}
         </ul>
       </div>
+      <style jsx>{`
+        .plan {
+          margin-bottom: 1em;
+        }
+
+        .plan-banner {
+          background: #f7f6f1;
+          border: 1px solid color(#f7f6f1 shade(15%));
+          border-radius: 4px;
+          text-align: center;
+          padding: 2em 1em;
+          margin-bottom: 1em;
+
+          .price {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: color(#f7f6f1 shade(40%) saturation(- 22%));
+
+            .cycle {
+              font-weight: 400;
+              font-size: 0.75em;
+              display: block;
+            }
+          }
+
+          h2 {
+            color: color(#f7f6f1 shade(40%) saturation(- 22%));
+            margin-bottom: 0;
+          }
+
+          p {
+            color: color(#f7f6f1 shade(40%) saturation(- 22%));
+            font-size: 0.9em;
+            line-height: 1.4;
+          }
+        }
+
+        .plan-details {
+          ul {
+            list-style: none;
+            margin: 0 0 0 2px;
+          }
+
+          i {
+            margin-right: 0.25em;
+          }
+        }
+      `}</style>
     </div>
   }
 }

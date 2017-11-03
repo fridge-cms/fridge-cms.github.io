@@ -9,9 +9,10 @@ export default class Header extends Component {
 
   render () {
     const {loggedIn} = this.context
+    const {className = '', children} = this.props
     const linkTitle = loggedIn ? 'Open dashboard' : 'Sign in'
 
-    return <header {...this.props}>
+    return <header className={className}>
       <div className='container'>
         <Link href='/'>
           <a className='branding'>
@@ -24,7 +25,69 @@ export default class Header extends Component {
           <a className='action' href='https://app.fridgecms.com'>{linkTitle}</a>
         </nav>
       </div>
-      {this.props.children}
+      {children}
+      <style jsx>{`
+        header {
+          background: #15222c;
+          padding: 3em 0 2em 0;
+
+          &.home {
+            background: linear-gradient(to bottom, #15222c 0%, #294151 200%);
+            padding: 3em 0 0 0;
+          }
+        }
+
+        .container {
+          width: 90%;
+          max-width: 960px;
+          margin: 0 auto;
+        }
+
+        .branding img {
+          height: 40px;
+          margin: -0.5em 0 0 0;
+        }
+
+        nav {
+          float: right;
+          text-align: right;
+
+          a {
+            color: rgba(255, 255, 255, .7);
+            margin-left: 1em;
+            text-decoration: none;
+
+            &:hover {
+              color: rgba(255, 255, 255, 1);
+            }
+
+            &.action {
+              color: white;
+              border: 1px solid white;
+              border-radius: 3px;
+              padding: .25em .6em;
+
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+
+        @media (max-width: 640px) {
+          .branding {
+            display: block;
+            margin-bottom: 1em;
+            text-align: center;
+          }
+
+          nav {
+            display: block;
+            float: none;
+            text-align: center;
+          }
+        }
+      `}</style>
     </header>
   }
 }

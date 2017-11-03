@@ -1,8 +1,9 @@
----
-title: Static Sites
-order: 4
----
+import docs from 'components/docs'
+import markdown from 'markdown-in-js'
 
+export default docs({
+  title: 'Static Sites'
+}, markdown`
 If using Fridge with static sites, it is critical that the site is recompiled when content changes. Fridge webhooks makes this task easy with the help of a small build server appliance.
 
 ## Webhooks
@@ -21,12 +22,13 @@ Fridge provides a small Docker image that can be deployed to respond to webhook 
 
 Get the image using Docker:
 
-```shell
+\`\`\`shell
 $ docker pull ripeworks/jekyll-build:latest
-```
+\`\`\`
 
 View the source on [Github](https://github.com/ripeworks/jekyll-build)
 
 ### Netlify
 
 Netlify can automatically build and deploy Jekyll sites without any additional technology.
+`)

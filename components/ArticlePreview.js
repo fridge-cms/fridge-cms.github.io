@@ -1,12 +1,11 @@
-import Head from 'next/head'
+import Link from './Link'
 import PostMeta from './PostMeta'
 
-export default ({ name, children, date, authors = [], className = 'markdown' }) =>
+export default ({ name, href, date, authors, children, className = 'markdown' }) =>
   <article className={className}>
-    <Head>
-      <title>Fridge{name && ` - ${name}`}</title>
-    </Head>
-    <h1 className='post-title'>{name}</h1>
+    <h1 className='post-title'>
+      <Link href={href} name={name} />
+    </h1>
     <PostMeta date={date} authors={authors} />
     <div className='post-body'>{children}</div>
     <style jsx>{`
@@ -16,8 +15,14 @@ export default ({ name, children, date, authors = [], className = 'markdown' }) 
       }
 
       h1 {
+        margin-bottom: 0;
         margin-top: 2.5rem;
         text-align: center;
+
+        :global(a) {
+          color: hsl(0, 0%, 20%);
+          text-decoration: none;
+        }
       }
     `}</style>
   </article>

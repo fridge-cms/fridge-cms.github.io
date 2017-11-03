@@ -1,8 +1,9 @@
----
-title: Getting Started
-order: 1
----
+import docs from 'components/docs'
+import markdown from 'markdown-in-js'
 
+export default docs({
+  title: 'Getting Started'
+}, markdown`
 Fridge has been designed to make it easy to create a custom and beautiful content experience. Use this page as a guide to walk through setting up your very own Fridge.
 
 ## Content Types
@@ -17,7 +18,7 @@ To create a new content type, click the + symbol next to the Content title in th
 
 ### Adding Parts
 
-![Adding Part](adding_parts.png)
+![Adding Part](/static/docs/adding_parts.png)
 
 _Parts_ are a piece of content used to describe a content type. For example, if you are reading a website article, you can think of the _Title, Url, Meta Title, Author, Date, Body, Comments_ as different parts of the article. There's no limit to how many parts you can add to any particular content type. Construct content types as simple or as complex as you need.
 
@@ -35,11 +36,11 @@ There are many different options available to both content types and their parts
 
 ## Creating Content
 
-![Adding Content](adding_content.png)
+![Adding Content](/static/docs/adding_content.png)
 
 After you have created a content type, it will appear in the Fridge sidebar. Clicking on the content type displays a list of all content of that type, as well as ways to create new content. When creating a new piece of content of a particular type, all of the content parts from that type are presented as input fields in a beautiful rich layout.
 
-Once you've created some content, it will be laid out on the content type page. Use the `Edit Model` button to make changes to the parts and options of the content type. Use the `Add New` button to add a new content entry.
+Once you've created some content, it will be laid out on the content type page. Use the \`Edit Model\` button to make changes to the parts and options of the content type. Use the \`Add New\` button to add a new content entry.
 
 ## Fridge API
 
@@ -51,3 +52,4 @@ There are many ways to integrate Fridge content directly into your projects!
 * __[Integrations](/docs/development/integrations/)__ - Use existing tools you're already familiar with and let Fridge power the dynamic content.
 
 We're always working to make the integration between existing technology and Fridge content as easy as possible.
+`)

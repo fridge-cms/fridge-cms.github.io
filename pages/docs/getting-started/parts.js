@@ -1,9 +1,7 @@
----
-title: Parts Reference
-order: 2
-published: true
----
+import docs from 'components/docs'
+import markdown from 'markdown-in-js'
 
+export default docs({title: 'Parts Reference'}, markdown`
 ### Text
 
 A basic text input field best used for creating titles or simple names.
@@ -56,3 +54,4 @@ Create an array of selections available with a radio selection for when only 1 i
 
 Create a one-to-one or a one-to-many relationship between another content type or a user role.
 
+`)
