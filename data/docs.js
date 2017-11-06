@@ -16,7 +16,6 @@ export default [
       }
     ]
   },
-
   {
     name: 'Development',
     pages: [
@@ -35,6 +34,10 @@ export default [
       {
         name: 'Static Sites',
         href: '/docs/development/builds'
+      },
+      {
+        name: 'API Reference',
+        href: '/docs/api'
       }
     ]
   }

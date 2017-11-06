@@ -2,14 +2,14 @@ import Page from './Page'
 import Head from 'next/head'
 import DocsSidebar from './DocsSidebar'
 
-export default ({ title }, children) => {
+export default ({ title, className = 'docs' }, children) => {
   return () =>
     <Page>
       <Head>
         <title>{title && `${title} - `}Fridge Documentation</title>
       </Head>
       <DocsSidebar />
-      <div className='docs'>
+      <div className={className}>
         {title && <h1>{title}</h1>}
         {children}
       </div>
