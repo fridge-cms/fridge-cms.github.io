@@ -21,6 +21,7 @@
     "postcss-nested": "^2.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-syntax-highlighter": "^5.8.0",
     "styled-jsx-plugin-postcss": "^0.1.1"
   },
   "postcss": {

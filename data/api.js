@@ -1,17 +1,20 @@
 export const langs = [
   {
     name: 'curl',
-    value: 'http'
+    value: 'http',
+    syntax: 'bash'
   },
   {
     name: 'node',
-    value: 'node'
+    value: 'node',
+    syntax: 'javascript'
   },
   {
     name: 'ruby',
-    value: 'ruby'
+    value: 'ruby',
+    syntax: 'ruby'
   },
-  {name: 'php', value: 'php'}
+  {name: 'php', value: 'php', syntax: 'php'}
 ]
 
 export default [
