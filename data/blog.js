@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     name: 'Introducing HIPAA compliant Fridges',
     href: '/blog/fridge-hipaa-hosting',

@@ -1,23 +1,5 @@
-export const langs = [
-  {
-    name: 'curl',
-    value: 'http',
-    syntax: 'bash'
-  },
-  {
-    name: 'node',
-    value: 'node',
-    syntax: 'javascript'
-  },
-  {
-    name: 'ruby',
-    value: 'ruby',
-    syntax: 'ruby'
-  },
-  {name: 'php', value: 'php', syntax: 'php'}
-]
 
-export default [
+module.exports = [
   {
     name: 'Authentication',
     href: '#authentication'
@@ -163,4 +145,23 @@ export default [
       }
     ]
   }
+]
+
+module.exports.langs = [
+  {
+    name: 'curl',
+    value: 'http',
+    syntax: 'bash'
+  },
+  {
+    name: 'node',
+    value: 'node',
+    syntax: 'javascript'
+  },
+  {
+    name: 'ruby',
+    value: 'ruby',
+    syntax: 'ruby'
+  },
+  {name: 'php', value: 'php', syntax: 'php'}
 ]
