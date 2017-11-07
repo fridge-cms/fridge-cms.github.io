@@ -7,7 +7,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "deploy": "gatsby build && s3cmd sync ./public/ s3://fridgecms.com --delete-removed --acl-public"
+    "export": "next build && next export",
+    "deploy": "npm run export && s3cmd sync ./out/ s3://fridgecms.com --delete-removed --acl-public"
   },
   "keywords": [],
   "author": "Mike Kruk <mike@ripeworks.com>",

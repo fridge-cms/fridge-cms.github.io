@@ -8,7 +8,7 @@ Fridge has been designed to make it easy to create a custom and beautiful conten
 
 ## Content Types
 
-Content types are used to describe the different kinds of content that are needed in a Fridge. Think of content types as high level names to describe content *(i.e. Blog Post, Page, Event, Person, Comment.)* Content types are made up of __parts__ which describe each piece of content that makes up the content type. There are several different content parts to create practically any kind of content type which can be seen in greater detail in the [Parts Reference](/docs/introduction/parts/).
+Content types are used to describe the different kinds of content that are needed in a Fridge. Think of content types as high level names to describe content *(i.e. Blog Post, Page, Event, Person, Comment.)* Content types are made up of __parts__ which describe each piece of content that makes up the content type. There are several different content parts to create practically any kind of content type which can be seen in greater detail in the [Parts Reference](/docs/getting-started/parts).
 
 ### Creating The First Content Type
 
@@ -22,7 +22,7 @@ To create a new content type, click the + symbol next to the Content title in th
 
 _Parts_ are a piece of content used to describe a content type. For example, if you are reading a website article, you can think of the _Title, Url, Meta Title, Author, Date, Body, Comments_ as different parts of the article. There's no limit to how many parts you can add to any particular content type. Construct content types as simple or as complex as you need.
 
-All of the different parts available are explained in the [Parts Reference](/docs/introduction/parts/).
+All of the different parts available are explained in the [Parts Reference](/docs/getting-started/parts).
 
 To add a part to your content type, click the Add button. Click the new part row to toggle the part options.
 
@@ -32,7 +32,7 @@ There are many different options available to both content types and their parts
 
 * __Display Options__ - Customize how the content should be displayed in Fridge. There are different layout and field display options as well as sorting capabilities.
 * __API Options__ - Control how content can be accessed when using the API as well as react to content creation with email notificatons.
-* Check out the [Content Type Reference](/docs/introduction/content-types/) page for a detailed explanation of each available option. 
+* Check out the [Content Type Reference](/docs/getting-started/content-types) page for a detailed explanation of each available option. 
 
 ## Creating Content
 
@@ -48,8 +48,8 @@ When it is time to starting pulling Fridge content into a project, Fridge provid
 
 There are many ways to integrate Fridge content directly into your projects!
 
-* __[API Libraries](/docs/development/libraries/)__ - Easily bring Fridge content into an existing programming language
-* __[Integrations](/docs/development/integrations/)__ - Use existing tools you're already familiar with and let Fridge power the dynamic content.
+* __[API Libraries](/docs/development/libraries)__ - Easily bring Fridge content into an existing programming language
+* __[Integrations](/docs/development/integrations)__ - Use existing tools you're already familiar with and let Fridge power the dynamic content.
 
 We're always working to make the integration between existing technology and Fridge content as easy as possible.
 `)

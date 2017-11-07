@@ -38,8 +38,8 @@ export default class extends Component {
       {footer && <Footer />}
       <style global jsx>{`
         @import(https://cdn.jsdelivr.net/npm/hack-font/build/web/hack-subset.css);
-
         * { box-sizing: border-box; }
+
         html {
           position: relative;
           font-size: 100%;
@@ -54,7 +54,7 @@ export default class extends Component {
           background: white;
           color: hsl(0, 0%, 20%);
           font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,sans-serif;
-          margin: 0 0 100px 0;
+          margin: 0 0 ${footer ? '100px' : '0'} 0;
         }
 
         a {
@@ -111,6 +111,15 @@ export default class extends Component {
 
         h3 {
           font-size: 1.33473rem;
+        }
+
+        hr {
+          background: #f4f6f7;
+          height: 1px;
+          padding: 0;
+          margin: 0;
+          border: 0;
+          margin-bottom: calc(1.5rem - 1px);
         }
 
         @media (max-width: 640px) {

@@ -20,8 +20,8 @@ export default class Header extends Component {
           </a>
         </Link>
         <nav>
-          <Link href='/docs/'><a>Documentation</a></Link>
-          <Link href='/blog/'><a>Blog</a></Link>
+          <Link href='/docs'><a>Documentation</a></Link>
+          <Link href='/blog'><a>Blog</a></Link>
           <a className='action' href='https://app.fridgecms.com'>{linkTitle}</a>
         </nav>
       </div>

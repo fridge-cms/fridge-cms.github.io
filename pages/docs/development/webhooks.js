@@ -1,5 +1,6 @@
 import docs from 'components/docs'
 import markdown from 'markdown-in-js'
+import Code from 'components/Code'
 
 export default docs({
   title: 'Webhooks'
@@ -36,8 +37,9 @@ When Fridge sends out webhooks, it sends a \`POST\` request to the URLs that hav
 
 Example Event payload:
 
-\`\`\`json
-{
+<div>
+${<Code language='json'>
+{`{
   "type": "content.create",
   "site_id": 1,
   "request": "/v1/content/type/blog_post",
@@ -56,6 +58,7 @@ Example Event payload:
     "slug": "my_post_title",
     "user_id": 90
   }
-}
-\`\`\`
+}`}
+</Code>}
+</div>
 `)

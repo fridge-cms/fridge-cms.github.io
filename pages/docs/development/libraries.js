@@ -9,10 +9,10 @@ export default docs({
 Install using \`npm\`
 
 \`\`\`shell
-$ npm install fridge_api
+$ npm install fridge
 \`\`\`
 
-Can be used in both node.js projects and browser projects. Browser builds use commonjs, but there is also a compiled version available: \`<script src="https://unpkg.com/fridge_api@0.2.9/dist/fridge_api.min.js"></script>\`
+Can be used in both node.js projects and browser projects. Browser builds use commonjs, but there is also a compiled version available: \`<script src="https://unpkg.com/fridge/dist/fridge.min.js"></script>\`
 
 View the source on [Github](https://github.com/fridge-cms/fridge_api.js)
 

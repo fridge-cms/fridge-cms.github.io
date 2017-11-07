@@ -7,13 +7,13 @@ export default (props) =>
       <Flex>
         <Box>
           <Link href='/'><a>Home</a></Link>
-          <Link href='/docs/'><a>Documentation</a></Link>
-          <Link href='/blog/'><a>Blog</a></Link>
+          <Link href='/docs'><a>Documentation</a></Link>
+          <Link href='/blog'><a>Blog</a></Link>
           <a href='mailto:help@fridgecms.com'>Contact</a>
           <a href='https://twitter.com/fridgecms' target='_blank'>Twitter</a>
           <a href='https://github.com/fridge-cms' target='_blank'>Github</a>
-          <Link href='/terms/'><a>Terms</a></Link>
-          <Link href='/privacy-policy/'><a>Privacy Policy</a></Link>
+          <Link href='/terms'><a>Terms</a></Link>
+          <Link href='/privacy-policy'><a>Privacy Policy</a></Link>
         </Box>
       </Flex>
     </div>
@@ -23,7 +23,6 @@ export default (props) =>
         left: 0;
         bottom: 0;
         font-size: .9em;
-        height: 100px;
         width: 100%;
         padding: 1em 0.75rem;
       }

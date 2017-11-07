@@ -42,12 +42,12 @@ export default () =>
         overflow: auto;
       }
 
-      :global(a:link, a:visited) {
+      .docs-nav :global(a:link), .docs-nav :global(a:visited) {
         color: #9199aa;
         text-decoration: none;
       }
 
-      :global(a.active) {
+      .docs-nav :global(a.active) {
         color: #0296ee;
       }
 

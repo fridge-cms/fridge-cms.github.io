@@ -47,7 +47,7 @@ If this option is checked, this content will be available through the API using 
 
 #### Public Access
 
-If checked content of this type will be able to be created using the public API endpoint. See [Public Content Creation](/docs/development/api/#public-content-creation) in the API reference for more information.
+If checked content of this type will be able to be created using the public API endpoint. See [Public Content Creation](/docs/api#public-content-creation) in the API reference for more information.
 
 #### Notify on creation
 

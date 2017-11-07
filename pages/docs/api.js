@@ -39,8 +39,8 @@ export default class extends Component {
         <style jsx global>{`
           .api {
             color: #444;
-            margin: 0 0 30px 320px;
-            padding-bottom: 50px;
+            margin: 0 0 0 320px;
+            padding-bottom: 80px;
             padding-top: 75px;
             position: relative;
 
