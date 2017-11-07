@@ -1,25 +1,46 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
-import { Container, Grid, Span } from 'react-responsive-grid'
-import { rhythm } from 'utils/typography'
+import Link from 'next/link'
+import { Flex, Box } from 'grid-styled'
 
-export default class Footer extends Component {
-  render () {
-    return <footer {...this.props}>
-      <Container style={{maxWidth: 960}}>
-        <Grid columns={12} style={{padding: `${rhythm(1 / 2)} 0`}}>
-          <Span columns={12} last>
-            <Link to='/'>Home</Link>
-            <Link to='/docs/'>Documentation</Link>
-            <Link to='/blog/'>Blog</Link>
-            <a href='mailto:help@fridgecms.com'>Contact</a>
-            <a href='https://twitter.com/fridgecms' target='_blank'>Twitter</a>
-            <a href='https://github.com/fridge-cms' target='_blank'>Github</a>
-            <Link to='/terms/'>Terms</Link>
-            <Link to='/privacy-policy/'>Privacy Policy</Link>
-          </Span>
-        </Grid>
-      </Container>
-    </footer>
-  }
-}
+export default (props) =>
+  <footer {...props}>
+    <div className='container'>
+      <Flex>
+        <Box>
+          <Link href='/'><a>Home</a></Link>
+          <Link href='/docs'><a>Documentation</a></Link>
+          <Link href='/blog'><a>Blog</a></Link>
+          <a href='mailto:help@fridgecms.com'>Contact</a>
+          <a href='https://twitter.com/fridgecms' target='_blank'>Twitter</a>
+          <a href='https://github.com/fridge-cms' target='_blank'>Github</a>
+          <Link href='/terms'><a>Terms</a></Link>
+          <Link href='/privacy-policy'><a>Privacy Policy</a></Link>
+        </Box>
+      </Flex>
+    </div>
+    <style jsx>{`
+      footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: .9em;
+        width: 100%;
+        padding: 1em 0.75rem;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      a:link, a:visited {
+        display: inline-block;
+        margin: 0 0.5em;
+        text-decoration: none;
+        color: #6c6c6c;
+      }
+
+      a:link:hover, a:visited:hover {
+        color: #6c6c6c;
+      }
+    `}</style>
+  </footer>

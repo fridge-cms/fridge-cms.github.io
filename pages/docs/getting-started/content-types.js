@@ -1,0 +1,55 @@
+import docs from 'components/docs'
+import markdown from 'markdown-in-js'
+
+export default docs({title: 'Content Type Reference'}, markdown`
+Content types have many different options for completely customizing how content is displayed within Fridge.
+
+---
+
+### Display Options
+
+#### Sort Method
+
+Control the default way content is sorted.
+
+* __Date__ - Content is sorted using its created date.
+* __Manual__ - Content is sorted manually. Use the drag toggle to reorder content.
+* __Hierarchy__ - Content is organized into a tree. Use the drag toggle to organize.
+
+#### Sort Order
+
+Change the direction of the sorted content. If using \`Manual\` or \`Hierarchy\` sort methods, the sort order should be *Ascending*.
+
+#### Layout
+
+The display layout controls how the content should be displayed in Fridge's dashboard.
+
+* __Default__ - A standard layout displaying content in rows.
+* __Card__ - Grid based layout using cards to display content. Great for displaying images.
+* __Table__ - Data focused layout that supports showing multiple columns of data for each row of content.
+* __Tree__ - Organizes content into a tree hierarchy using the default layout. *This layout is required when using the Hierarchy sort method*.
+
+#### Fields
+
+If using a display layout that supports showing multiple fields, you can pick and choose which fields will be displayed.
+
+#### Columns
+
+Control how many columns are used in the grid when viewing the content edit screen.
+
+---
+
+### API Options
+
+#### API Access
+
+If this option is checked, this content will be available through the API using the publishable key. All content is entirely accessible when using the secret key.
+
+#### Public Access
+
+If checked content of this type will be able to be created using the public API endpoint. See [Public Content Creation](/docs/api#public-content-creation) in the API reference for more information.
+
+#### Notify on creation
+
+Have Fridge optionally send an email notification when content is created using the public API endpoint. This works perfectly when creating contact forms or user-based submissions.
+`)
