@@ -27,7 +27,7 @@ export default class extends Component {
   render () {
     const {lang} = this.state
 
-    const Component = docs({title: 'API Reference', className: 'api'},
+    const Component = docs({title: 'API Reference', className: 'api', footer: false},
       <div className={`lang-${lang}`}>
         <Sites />
         <Types />
@@ -81,7 +81,8 @@ export default class extends Component {
 
           .code-bg {
             width: 50%;
-            background: #292929;
+            //background: #292929;
+            background: #2a2734;
             position: absolute;
             right: 0;
             top: 0;
@@ -91,8 +92,9 @@ export default class extends Component {
         `}</style>
         <style>
           {langs.map(lang => `
-            .lang-${lang.value} .lang { display: none; }
-            .lang-${lang.value} .lang-${lang.value} { display: block; }
+            .lang-${lang.value} [data-language] { display: none; }
+            .lang-${lang.value} [data-language=${lang.syntax}] { display: block; }
+            .lang-${lang.value} [data-language=json] { display: block; }
           `).join('')}
         </style>
       </div>

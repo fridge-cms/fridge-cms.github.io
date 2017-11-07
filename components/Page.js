@@ -14,7 +14,8 @@ export default class extends Component {
   }
 
   static defaultProps = {
-    header: false
+    header: false,
+    footer: true
   }
 
   getChildContext () {
@@ -29,13 +30,15 @@ export default class extends Component {
   }
 
   render () {
-    const {header} = this.props
+    const {header, footer} = this.props
 
     return <div>
       {header && <Header />}
       {this.props.children}
-      <Footer />
+      {footer && <Footer />}
       <style global jsx>{`
+        @import(https://cdn.jsdelivr.net/npm/hack-font/build/web/hack-subset.css);
+
         * { box-sizing: border-box; }
         html {
           position: relative;

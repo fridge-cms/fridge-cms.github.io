@@ -8,7 +8,7 @@ const fridge = new Fridge({
 `
 const genCode = (path, data = null, method = 'get', assign = null) => {
   const args = [`'${path}'`]
-  if (data) args.push(JSON.stringify(data, null, 2))
+  if (data) args.push(JSON.stringify(data, null, 2).replace(/"/g, "'"))
 
   return `${init}
 ${assign ? `const ${assign} = ` : ''}fridge.${method}(${args.join(', ')})`

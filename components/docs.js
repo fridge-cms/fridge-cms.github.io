@@ -2,9 +2,9 @@ import Page from './Page'
 import Head from 'next/head'
 import DocsSidebar from './DocsSidebar'
 
-export default ({ title, className = 'docs' }, children) => {
+export default ({ title, className = 'docs', footer = true }, children) => {
   return () =>
-    <Page>
+    <Page footer={footer}>
       <Head>
         <title>{title && `${title} - `}Fridge Documentation</title>
       </Head>

@@ -26,7 +26,7 @@ export default ({ langs, value, onChange }) =>
         font-size: 0.8em;
 
         &.active {
-          background: #292929;
+          background: #2a2734;
         }
       }
     `}</style>
