@@ -2,9 +2,10 @@ import Link from './Link'
 import Toc from './api/Toc'
 import docs from '../data/docs'
 
-const isCurrentPage = (href) =>
-  typeof document !== 'undefined' &&
-  document.location.pathname === href || document.location.pathname === `${href}/`
+const isCurrentPage = (href) => {
+  if (typeof document === 'undefined') return false
+  return document.location.pathname === href || document.location.pathname === `${href}/`
+}
 
 export default () =>
   <div className='docs-nav'>
