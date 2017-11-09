@@ -6,142 +6,147 @@ module.exports = [
   },
   {
     name: 'Sites',
+    href: '#sites',
     pages: [
       {
         name: 'Create a site',
-        href: '#create-a-new-site'
+        href: '#create-a-new-fridge-site'
       },
       {
         name: 'Retrieve a site',
-        href: ''
+        href: '#retrieve-an-existing-fridge-site'
       },
       {
         name: 'Update a site',
-        href: ''
+        href: '#update-a-fridge-site'
       },
       {
         name: 'Delete a site',
-        href: ''
+        href: '#delete-a-fridge-site'
       },
       {
         name: 'List sites',
-        href: ''
+        href: '#list-all-fridge-sites'
       },
       {
         name: 'Regenerate API keys',
-        href: ''
+        href: '#regenerate-api-keys-for-a-fridge-site'
       }
     ]
   },
   {
     name: 'Content Types',
+    href: '#content-types',
     pages: [
       {
         name: 'Create a content type',
-        href: ''
+        href: '#create-a-new-content-type'
       },
       {
         name: 'Retrieve a content type',
-        href: ''
+        href: '#retrieve-an-existing-content-type'
       },
       {
         name: 'Update a content type',
-        href: ''
+        href: '#update-a-content-type'
       },
       {
         name: 'Delete a content type',
-        href: ''
+        href: '#delete-a-content-type'
       },
       {
         name: 'List content types',
-        href: ''
+        href: '#list-all-content-types'
       }
     ]
   },
   {
     name: 'Content',
+    href: '#content',
     pages: [
       {
         name: 'Create content',
-        href: ''
+        href: '#create-a-new-content-item'
       },
       {
         name: 'Retrieve content',
-        href: ''
+        href: '#retrieve-an-existing-content-item'
       },
       {
         name: 'Update content',
-        href: ''
+        href: '#update-a-content-item'
       },
       {
         name: 'Delete content',
-        href: ''
+        href: '#delete-a-content-item'
       },
       {
         name: 'List content',
-        href: ''
+        href: '#list-all-content'
       },
       {
         name: 'Upload a file',
-        href: ''
+        href: '#upload-a-file'
       },
       {
         name: 'Retrieve a file',
-        href: ''
+        href: '#retrieve-an-existing-file'
       },
       {
         name: 'Create public content',
-        href: ''
+        href: '#public-content-creation'
       }
     ]
   },
   {
     name: 'User Roles',
+    href: '#user-roles',
     pages: [
       {
         name: 'Create a user role',
-        href: ''
+        href: '#create-a-new-user-role'
       },
       {
         name: 'Retrieve a user role',
-        href: ''
+        href: '#retrieve-an-existing-user-role'
       },
       {
         name: 'Update a user role',
-        href: ''
+        href: '#update-a-user-role'
       },
       {
         name: 'Delete a user role',
-        href: ''
+        href: '#delete-a-user-role'
       },
       {
         name: 'List user roles',
-        href: ''
+        href: '#list-all-user-roles'
       }
     ]
   },
   {
     name: 'Users',
+    href: '#users',
     pages: [
       {
         name: 'Create a user',
-        href: ''
+        href: '#create-a-new-user'
       },
       {
         name: 'Retrieve a user',
-        href: ''
+        href: '#retrieve-an-existing-user'
       },
       {
         name: 'Update a user',
-        href: ''
+        href: '#update-a-user'
       },
       {
         name: 'Delete a user',
-        href: ''
+        href: '#delete-a-user'
       },
       {
         name: 'List users',
-        href: ''
+        href: '#list-all-users'
       }
     ]
   }

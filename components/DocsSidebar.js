@@ -1,4 +1,5 @@
 import Link from './Link'
+import Toc from './api/Toc'
 import docs from '../data/docs'
 
 export default () =>
@@ -17,6 +18,11 @@ export default () =>
             {section.pages.map(page =>
               <li key={page.href}>
                 <Link {...page} />
+                {(typeof document !== 'undefined' &&
+                  document.location.pathname === page.href &&
+                  page.href === '/docs/api') &&
+                  <Toc />
+                }
               </li>
             )}
           </ul>

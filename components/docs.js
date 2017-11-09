@@ -1,6 +1,12 @@
 import Page from './Page'
 import Head from 'next/head'
+import Heading from './text/Heading'
 import DocsSidebar from './DocsSidebar'
+
+export const components = {
+  h1: (props) => <Heading tag='h1' {...props} />,
+  h2: (props) => <Heading tag='h2' {...props} />
+}
 
 export default ({ title, className = 'docs', footer = true }, children) => {
   return () =>

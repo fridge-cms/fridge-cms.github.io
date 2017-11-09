@@ -3,7 +3,9 @@ import { Component } from 'react'
 import docs from 'components/docs'
 import LangPicker from 'components/api/LangPicker'
 import { langs } from 'data/api'
+import ScrollTrackHeading from 'components/ScrollTrackHeading'
 
+import Auth from 'components/api/sections/auth'
 import Sites from 'components/api/sections/sites'
 import Types from 'components/api/sections/types'
 import Content from 'components/api/sections/content'
@@ -14,6 +16,7 @@ export default class extends Component {
   state = {
     lang: 'node'
   }
+
   componentDidMount () {
     const defaultLang = localStorage.getItem('fridge:docs:lang')
     if (defaultLang) this.setState({lang: defaultLang})
@@ -29,6 +32,7 @@ export default class extends Component {
 
     const Component = docs({title: 'API Reference', className: 'api', footer: false},
       <div className={`lang-${lang}`}>
+        <Auth />
         <Sites />
         <Types />
         <Content />
@@ -100,6 +104,8 @@ export default class extends Component {
       </div>
     )
 
-    return <Component />
+    return <ScrollTrackHeading>
+      <Component />
+    </ScrollTrackHeading>
   }
 }

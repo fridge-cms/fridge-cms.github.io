@@ -16,10 +16,17 @@ const type = {
   id: 3,
   site_id: 1,
   name: 'Post',
+  slug: 'post',
+  collection: true,
   date_created: '2015-01-01 01:00:00',
   date_updated: '2015-01-01 01:00:00',
   display_order: 0,
-  options: {},
+  options: {
+    layout: 'default',
+    api_access: true,
+    sort_order: 'desc',
+    sort_method: 'date_created'
+  },
   parts: [
     {
       name: 'title',
@@ -75,6 +82,15 @@ const user = {
 }
 
 const sites = [
+  {
+    name: 'site.auth',
+    res: {
+      access_token: '36334bb25b63b843754b34057f4ea66756fbc14d',
+      expires_in: 3600,
+      token_type: 'Bearer',
+      scope: null
+    }
+  },
   {
     name: 'site.list',
     res: [

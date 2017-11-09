@@ -1,8 +1,9 @@
 import markdown from 'markdown-in-js'
 import Code from '../Code'
 import { Params, Param } from '../Params'
+import { components } from 'components/docs'
 
-export default () => markdown`
+export default () => markdown(components)`
 # Content Types
 
 ## Create a new Content Type
