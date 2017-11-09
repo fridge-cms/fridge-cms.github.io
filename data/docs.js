@@ -37,7 +37,8 @@ module.exports = [
       },
       {
         name: 'API Reference',
-        href: '/docs/api'
+        href: '/docs/api',
+        toc: true
       }
     ]
   }

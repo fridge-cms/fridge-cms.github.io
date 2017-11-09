@@ -2,6 +2,10 @@ import Link from './Link'
 import Toc from './api/Toc'
 import docs from '../data/docs'
 
+const isCurrentPage = (href) =>
+  typeof document !== 'undefined' &&
+  document.location.pathname === href || document.location.pathname === `${href}/`
+
 export default () =>
   <div className='docs-nav'>
     <Link href='/' className='branding'>
@@ -18,11 +22,7 @@ export default () =>
             {section.pages.map(page =>
               <li key={page.href}>
                 <Link {...page} />
-                {(typeof document !== 'undefined' &&
-                  document.location.pathname === page.href &&
-                  page.href === '/docs/api') &&
-                  <Toc />
-                }
+                {(page.toc && isCurrentPage(page.href)) && <Toc />}
               </li>
             )}
           </ul>
