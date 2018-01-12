@@ -1,0 +1,60 @@
+import post, { getPost } from 'components/post'
+import markdown from 'markdown-in-js'
+import Code from 'components/Code'
+
+export default post(getPost('announcing-v2-api-beta'), markdown`
+In preparation for this post, I looked back through the commit history for the current Fridge API. The initial launch of the API dates back to 2013! As technology continues to change and API trends mature, I think the Fridge API is starting to show its age.
+
+## v2 API
+
+A version 2 API has been in the works for over a year now, and it's been meticulously crafted for a great developer experience. Not to mention the backend infrastructure changes that come with it ensure Fridge is entirely scalable.
+
+So, today I am announcing the beginnings of a beta rollout of the new v2 API!
+
+The [documentation](/docs) will be updated over the coming weeks to include both the current v1 API and new v2 API. There will be another blog post following this one once the documentation is up.
+
+For a quick example of the new API, here's how some sample content looks:
+
+${<Code language='json'>
+{`{
+  "id": "b062c5fa-554c-46e0-a2ce-73f8079df3d5",
+  "slug": "sample_post",
+  "active": true,
+  "date_created": "2018-01-12T18:06:05.323Z",
+  "date_updated": "2018-01-12T18:06:05.323Z",
+  "user_id": "1a6c2307-cd0a-11e4-872b-12797bd99685",
+  "title": "Sample Post",
+  "description": "This is just a sample post to show off the new API!",
+  "photos": [
+    {
+      "url": "https://assets.fridgecms.com/1a718654-cd0a-11e4-872b-12797bd99685/241231.png",
+      "name": "241231.png",
+      "size": 13498
+    }
+  ],
+  "category": [
+    {
+      "id": "40181fd2-08db-4567-849f-6a646eccf924",
+      "slug": "announcement",
+      "active": true,
+      "date_created": "2018-01-12T17:21:13.744Z",
+      "date_updated": "2018-01-12T17:21:13.744Z",
+      "user_id": "1a6c2307-cd0a-11e4-872b-12797bd99685",
+      "title": "Announcement"
+    }
+  ]
+}`}
+</Code>}
+
+Content fields that you define are pulled right inline in the main object rather than being in a separate \`content\` field. Also, content relationships are automatically inlined by default, so rather than getting a content id that you need to fetch in a subsequent request, it's right there.
+
+## Exciting Pricing Updates
+
+This new API also introduces some internal infrastructure updates to make Fridge scale effortlessly. So, with these new updates, there will be some pricing changes coming along with the API updates. The most exciting part of the pricing updates I want to share is that the free plan will no longer be a 30-day trial. That's right, __everyone will get 1 Fridge for free__. Use it for your next project, or just to tinker around and check out the API or dashboard. It's entirely up to you.
+
+Paid plans will also be getting some love with a slew of exciting new features that we have planned, including custom components and functionality that you can add to the Fridge dashboard!
+
+Along with the API documentation, rolling out with it will be blog posts and examples of a new site building framework to make going from 0 to Fridge powered project even faster. It's built on top of [Next.js](https://github.com/zeit/next.js/) and is really quite amazing. Sites are really fast, it's super easy to integrate Fridge content into your code, and even deploying is a breeze.
+
+So stay tuned to get your first Fridge on us!
+`)

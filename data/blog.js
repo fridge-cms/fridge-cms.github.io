@@ -1,5 +1,12 @@
 module.exports = [
   {
+    name: 'Announcing v2 API Beta',
+    href: '/blog/announcing-v2-api-beta',
+    date: new Date('2018-01-12'),
+    authors: ['Mike Kruk'],
+    preview: 'In preparation for this post, I looked back through the commit history for the current Fridge API. The initial launch of the API dates back to 2013! As technology continues to change and API trends mature, I think the Fridge API is starting to show its age.'
+  },
+  {
     name: 'Introducing HIPAA compliant Fridges',
     href: '/blog/fridge-hipaa-hosting',
     date: new Date('2017-05-24'),

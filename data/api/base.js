@@ -116,7 +116,7 @@ export default (genCode, init) => {
           published: '2015-02-01'
         },
         active: 1
-      })
+      }, 'post')
     }
   ]
 
