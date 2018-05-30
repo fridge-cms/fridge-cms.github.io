@@ -9,7 +9,6 @@
     }]
   ],
   "plugins": [
-    "markdown-in-js/babel",
     ["module-resolver", {
       "root": ["./"]
     }]

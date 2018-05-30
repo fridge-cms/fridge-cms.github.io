@@ -1,11 +1,7 @@
-import Page from '../components/Page'
-import Article from '../components/Article'
-import markdown from 'markdown-in-js'
+import PageTitle from 'components/PageTitle'
 
-export default () =>
-  <Page header>
-    <Article name='Privacy Policy'>
-      {markdown`
+<PageTitle name='Privacy Policy' />
+
 Your privacy is important to us.
 
 It is Fridge's policy to respect your privacy regarding any information we may collect while operating our website. Accordingly, we have developed this privacy policy in order for you to understand how we collect, use, communicate, disclose and otherwise make use of personal information. We have outlined our privacy policy below.
@@ -19,6 +15,3 @@ It is Fridge's policy to respect your privacy regarding any information we may c
 * We will only retain personal information for as long as necessary for the fulfilment of those purposes.
 
 We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained. Fridge may change this privacy policy from time to time at Fridge's sole discretion.
-`}
-    </Article>
-  </Page>

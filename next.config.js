@@ -1,7 +1,9 @@
 const blog = require('./data/blog')
 const docs = require('./data/docs')
+const withMDX = require('@zeit/next-mdx')()
 
-module.exports = {
+module.exports = withMDX({
+  pageExtensions: ['js', 'mdx'],
   exportPathMap: () => {
     return {
       '/': { page: '/' },
@@ -19,4 +21,4 @@ module.exports = {
       }, {})
     }
   }
-}
+})

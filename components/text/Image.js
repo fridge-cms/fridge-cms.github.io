@@ -3,7 +3,7 @@ export default ({ src }) =>
     <img src={src} />
     <style jsx>{`
       .image {
-        margin: 0 -150px;
+        margin: 0 -150px 1em;
         text-align: center;
       }
     `}</style>

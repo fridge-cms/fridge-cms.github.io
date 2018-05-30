@@ -1,8 +1,8 @@
-import post, { getPost } from 'components/post'
-import markdown from 'markdown-in-js'
+import Post from 'components/Post'
 import Code from 'components/Code'
 
-export default post(getPost('announcing-v2-api-beta'), markdown`
+<Post slug='announcing-v2-api-beta' />
+
 In preparation for this post, I looked back through the commit history for the current Fridge API. The initial launch of the API dates back to 2013! As technology continues to change and API trends mature, I think the Fridge API is starting to show its age.
 
 ## v2 API
@@ -15,7 +15,7 @@ The [documentation](/docs) will be updated over the coming weeks to include both
 
 For a quick example of the new API, here's how some sample content looks:
 
-${<Code language='json'>
+<Code language='json'>
 {`{
   "id": "b062c5fa-554c-46e0-a2ce-73f8079df3d5",
   "slug": "sample_post",
@@ -44,9 +44,9 @@ ${<Code language='json'>
     }
   ]
 }`}
-</Code>}
+</Code>
 
-Content fields that you define are pulled right inline in the main object rather than being in a separate \`content\` field. Also, content relationships are automatically inlined by default, so rather than getting a content id that you need to fetch in a subsequent request, it's right there.
+Content fields that you define are pulled right inline in the main object rather than being in a separate `content` field. Also, content relationships are automatically inlined by default, so rather than getting a content id that you need to fetch in a subsequent request, it's right there.
 
 ## Exciting Pricing Updates
 
@@ -57,4 +57,3 @@ Paid plans will also be getting some love with a slew of exciting new features t
 Along with the API documentation, rolling out with it will be blog posts and examples of a new site building framework to make going from 0 to Fridge powered project even faster. It's built on top of [Next.js](https://github.com/zeit/next.js/) and is really quite amazing. Sites are really fast, it's super easy to integrate Fridge content into your code, and even deploying is a breeze.
 
 So stay tuned to get your first Fridge on us!
-`)

@@ -1,11 +1,7 @@
-import Page from '../components/Page'
-import Article from '../components/Article'
-import markdown from 'markdown-in-js'
+import PageTitle from 'components/PageTitle'
 
-export default () =>
-  <Page header>
-    <Article name='Terms'>
-      {markdown`
+<PageTitle name='Terms' />
+
 1. Terms
 
 By accessing the website at https://fridgecms.com, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
@@ -44,6 +40,3 @@ Fridge may revise these terms of service for its website at any time without not
 8. Governing Law
 
 These terms and conditions are governed by and construed in accordance with the laws of Michigan and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
-`}
-    </Article>
-  </Page>
