@@ -31,7 +31,7 @@ export default class Home extends Component {
           <h1><strong>Fridge.</strong> Real content management.</h1>
           <h2>A robust API and intuitive dashboard for any kind of content.</h2>
           <p>
-            <a className='cta' href='https://fridgecms.com/signup'>Start Fridge for free</a>
+            <a className='cta' href='https://fridge.app/signup'>Start Fridge for free</a>
           </p>
           <div className='interface'>
             <img src='/static/application-view.png' />
