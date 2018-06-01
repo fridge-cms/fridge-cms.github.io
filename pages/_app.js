@@ -2,8 +2,13 @@ import React from 'react'
 import App, {Container} from 'next/app'
 import Page from 'components/Page'
 import Article from 'components/Article'
-import Documentation from 'components/Documentation'
+import Documentation, { components } from 'components/Documentation'
 
+/*
+ * MDX Pages don't have a way to inform their parent
+ * what layout they want to use, so we decipher that here
+ * without having to muddy up the markdown.
+ */
 const getLayout = ({ pathname }) => {
   let component = 'div'
   const pageProps = {
@@ -14,6 +19,9 @@ const getLayout = ({ pathname }) => {
   if (pathname.substr(0, 5) === '/docs') {
     component = Documentation
     pageProps.header = false
+    if (pathname.split('/')[2] === 'api') {
+      layoutProps.className = 'api'
+    }
   }
 
   if (pathname.substr(0, 5) === '/blog') {
@@ -49,6 +57,10 @@ export default class MyApp extends App {
   render () {
     const {Component, componentProps, router} = this.props
     const {component: Layout, pageProps, layoutProps} = getLayout(router)
+
+    if (Layout === Documentation) {
+      componentProps.components = components
+    }
 
     return <Container>
       <Page {...pageProps}>

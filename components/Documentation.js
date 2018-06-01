@@ -4,14 +4,14 @@ import Heading from './text/Heading'
 import DocsSidebar from './DocsSidebar'
 
 export const components = {
-  h1: (props) => <Heading tag='h1' {...props} />,
+  h1: (props) => <Heading tag='h1' title {...props} />,
   h2: (props) => <Heading tag='h2' {...props} />
 }
 
-export default ({ children }) =>
+export default ({ children, className = 'docs' }) =>
   <div>
     <DocsSidebar />
-    <div className='docs'>
+    <div className={className}>
       {children}
     </div>
     <style jsx>{`

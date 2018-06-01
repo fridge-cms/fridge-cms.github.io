@@ -1,23 +1,17 @@
-import markdown from 'markdown-in-js'
 import Code from '../Code'
 import { Params, Param } from '../Params'
-import { components } from 'components/docs'
 
-export default () => markdown(components)`
 # Content
 
 ## Create a new content item
 
-<div>
-${<Code name='content.create' />}
-</div>
+<Code name='content.create' />
 
 Creates a new content item.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content will be created.
   </Param>
@@ -34,50 +28,42 @@ ${<Params>
   <Param name='content' required>
     An array or hash of content values paired to part definition identifiers.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`POST https://api.fridgecms.com/v1/content/type/:identifier\`
+`POST https://api.fridgecms.com/v1/content/type/:identifier`
 
 ## Retrieve an existing Content item
 
-<div>
-${<Code name='content.get' />}
-</div>
+<Code name='content.get' />
 
 Retrieve the details of an existing content item. You must supply the unique site id and content id.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content belongs.
   </Param>
   <Param name=':identifier' required>
     The id or slug of the content item.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/content/:identifier\`
+`GET https://api.fridgecms.com/v1/content/:identifier`
 
 ## Update a Content item
 
-<div>
-${<Code name='content.update' />}
-</div>
+<Code name='content.update' />
 
 Updates the specified content item by setting the values of the parameters passed.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content will be created.
   </Param>
@@ -94,50 +80,42 @@ ${<Params>
   <Param name='content' required>
     An array or hash of content values paired to part definition identifiers.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`PUT https://api.fridgecms.com/v1/content/:identifier\`
+`PUT https://api.fridgecms.com/v1/content/:identifier`
 
 ## Delete a Content item
 
-<div>
-${<Code name='content.delete' />}
-</div>
+<Code name='content.delete' />
 
 Permanently deletes a content item. It cannot be undone.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
   <Param name=':identifier' required>
     The id of the content.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`DELETE https://api.fridgecms.com/v1/content/:identifier\`
+`DELETE https://api.fridgecms.com/v1/content/:identifier`
 
 ## List all Content
 
-<div>
-${<Code name='content.list' />}
-</div>
+<Code name='content.list' />
 
 Retrieve a list of content.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
@@ -162,86 +140,72 @@ ${<Params>
   <Param name='{part_name}'>
     Any part name/part value pair to filter by.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/content\`
+`GET https://api.fridgecms.com/v1/content`
 
 ## Upload a file
 
-<div>
-${<Code name='content.upload' />}
-</div>
+<Code name='content.upload' />
 
 Upload a file asset to the specified site.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
   <Param name='file' required>
     The file to upload.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`POST https://api.fridgecms.com/v1/content/upload\`
+`POST https://api.fridgecms.com/v1/content/upload`
 
 ## Retrieve an existing file
 
-<div>
-${<Code name='content.file' />}
-</div>
+<Code name='content.file' />
 
-Retrieve an existing file. The file is sent as binary with proper \`Content-Type\` headers. You must supply the unique site id and filename.
+Retrieve an existing file. The file is sent as binary with proper `Content-Type` headers. You must supply the unique site id and filename.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
   <Param name=':filename' required>
     The name of the file.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/content/upload/:filename\`
+`GET https://api.fridgecms.com/v1/content/upload/:filename`
 
 
 ## Public Content creation
 
-<div>
-${<Code name='content.public' />}
-</div>
+<Code name='content.public' />
 
-If a content type allows for public content creation by setting the \`api_create\` option to \`true\`, a valid public key authorized token can create content.
+If a content type allows for public content creation by setting the `api_create` option to `true`, a valid public key authorized token can create content.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name=':type' required>
     The id or slug of the content type used to create the content.
   </Param>
   <Param name='content' required>
     An array or hash of content values paired to part definition identifiers.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`POST https://api.fridgecms.com/v1/public/:type\`
-`
+`POST https://api.fridgecms.com/v1/public/:type`

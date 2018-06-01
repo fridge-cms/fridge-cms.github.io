@@ -1,23 +1,17 @@
-import markdown from 'markdown-in-js'
 import Code from '../Code'
 import { Params, Param } from '../Params'
-import { components } from 'components/docs'
 
-export default () => markdown(components)`
 # User Roles
 
 ## Create a new User Role
 
-<div>
-${<Code name='role.create' />}
-</div>
+<Code name='role.create' />
 
 Creates a new user role.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user role will be created.
   </Param>
@@ -39,51 +33,43 @@ ${<Params>
   <Param name='permissions' extra={<span>Admins only</span>}>
     An object of role-based permissions
   </Param>
-</Params>}
-</div>
+</Params>
 
 
 ### HTTP Request
 
-\`POST https://api.fridgecms.com/v1/roles\`
+`POST https://api.fridgecms.com/v1/roles`
 
 ## Retrieve an existing User Role
 
-<div>
-${<Code name='role.get' />}
-</div>
+<Code name='role.get' />
 
 Retrieve the details of an existing user role. You must supply the unique site id and user role id or slug.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user role belongs.
   </Param>
   <Param name=':identifier' required>
     The id or slug of the user role.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/roles/:identifier\`
+`GET https://api.fridgecms.com/v1/roles/:identifier`
 
 ## Update a User Role
 
-<div>
-${<Code name='role.update' />}
-</div>
+<Code name='role.update' />
 
 Updates the specified user role by setting the values of the parameters passed.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user role will be created.
   </Param>
@@ -105,18 +91,15 @@ ${<Params>
   <Param name='permissions' extra={<span>Admins only</span>}>
     An object of role-based permissions
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`PUT https://api.fridgecms.com/v1/roles/:identifier\`
+`PUT https://api.fridgecms.com/v1/roles/:identifier`
 
 ## Delete a User Role
 
-<div>
-${<Code name='role.delete' />}
-</div>
+<Code name='role.delete' />
 
 Permanently deletes a user role. It cannot be undone.
 
@@ -126,40 +109,33 @@ All users that belong to the specified user role will also be permanently delete
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user role belongs.
   </Param>
   <Param name=':identifier' required>
     The id or slug of the user role.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`DELETE https://api.fridgecms.com/v1/roles/:identifier\`
+`DELETE https://api.fridgecms.com/v1/roles/:identifier`
 
 ## List all User Roles
 
-<div>
-${<Code name='role.list' />}
-</div>
+<Code name='role.list' />
 
 Retrieve a list of user roles.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/roles\`
-`
+`GET https://api.fridgecms.com/v1/roles`

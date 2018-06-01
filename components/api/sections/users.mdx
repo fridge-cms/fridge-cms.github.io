@@ -1,23 +1,17 @@
-import markdown from 'markdown-in-js'
 import Code from '../Code'
 import { Params, Param } from '../Params'
-import { components } from 'components/docs'
 
-export default () => markdown(components)`
 # Users
 
 ## Create a new user
 
-<div>
-${<Code name='user.create' />}
-</div>
+<Code name='user.create' />
 
 Creates a new user.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user will be created.
   </Param>
@@ -36,52 +30,44 @@ ${<Params>
   <Param name='content' required>
     An array or hash of content values paired to part identifiers
   </Param>
-</Params>}
-</div>
+</Params>
 
 > If you create a new user that has the same email as another user from a different site, Fridge will allow that existing user access to the specified site id rather than creating a new user.
 
 ### HTTP Request
 
-\`POST https://api.fridgecms.com/v1/users/role/:identifier\`
+`POST https://api.fridgecms.com/v1/users/role/:identifier`
 
 ## Retrieve an existing User
 
-<div>
-${<Code name='user.get' />}
-</div>
+<Code name='user.get' />
 
 Retrieve the details of an existing user. You must supply the unique site id and user id.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user belongs.
   </Param>
   <Param name=':id' required>
     The id of the user.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/users/:identifier\`
+`GET https://api.fridgecms.com/v1/users/:identifier`
 
 ## Update a User
 
-<div>
-${<Code name='user.update' />}
-</div>
+<Code name='user.update' />
 
 Updates the specified user by setting the values of the parameters passed.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user belongs.
   </Param>
@@ -100,25 +86,21 @@ ${<Params>
   <Param name='content' required>
     An array or hash of content values paired to part identifiers
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`PUT https://api.fridgecms.com/v1/users/:id\`
+`PUT https://api.fridgecms.com/v1/users/:id`
 
 ## Delete a User
 
-<div>
-${<Code name='user.delete' />}
-</div>
+<Code name='user.delete' />
 
 Permanently deletes a user. It cannot be undone.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the user belongs.
   </Param>
@@ -137,25 +119,21 @@ ${<Params>
   <Param name='content' required>
     An array or hash of content values paired to part identifiers
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`DELETE https://api.fridgecms.com/v1/user/:id\`
+`DELETE https://api.fridgecms.com/v1/user/:id`
 
 ## List all Users
 
-<div>
-${<Code name='user.list' />}
-</div>
+<Code name='user.list' />
 
 Retrieve a list of users.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
@@ -180,10 +158,8 @@ ${<Params>
   <Param name='{part_name}'>
     Any part name/part value pair to filter by.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/users\`
-`
+`GET https://api.fridgecms.com/v1/users`

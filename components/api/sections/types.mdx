@@ -1,21 +1,15 @@
-import markdown from 'markdown-in-js'
 import Code from '../Code'
 import { Params, Param } from '../Params'
-import { components } from 'components/docs'
 
-export default () => markdown(components)`
 # Content Types
 
 ## Create a new Content Type
 
-<div>
-${<Code name='type.create' />}
-</div>
+<Code name='type.create' />
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content type will be created.
   </Param>
@@ -31,50 +25,42 @@ ${<Params>
   <Param name='parts' required>
     An array of part definition objects.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`POST https://api.fridgecms.com/v1/types\`
+`POST https://api.fridgecms.com/v1/types`
 
 ## Retrieve an existing Content Type
 
-<div>
-${<Code name='type.get' />}
-</div>
+<Code name='type.get' />
 
 Retrieve the details of an existing content type. You must supply the unique content type id or slug.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content type belongs.
   </Param>
   <Param name=':identifier' required>
     The id or slug of the content type to retrieve.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/types/:identifier\`
+`GET https://api.fridgecms.com/v1/types/:identifier`
 
 ## Update a Content Type
 
-<div>
-${<Code name='type.update' />}
-</div>
+<Code name='type.update' />
 
 Updates the specified content type by setting the values of the parameters passed.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content type belongs.
   </Param>
@@ -90,57 +76,47 @@ ${<Params>
   <Param name='parts' required>
     An array of part definition objects.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`PUT https://api.fridgecms.com/v1/types/:identifier\`
+`PUT https://api.fridgecms.com/v1/types/:identifier`
 
 ## Delete a Content Type
 
-<div>
-${<Code name='type.delete' />}
-</div>
+<Code name='type.delete' />
 
 Permanently deletes a content type. It cannot be undone.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site where the content type belongs.
   </Param>
   <Param name='id' required>
     The id of the content type.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`DELETE https://api.fridgecms.com/v1/types/:id\`
+`DELETE https://api.fridgecms.com/v1/types/:id`
 
 ## List all Content Types
 
-<div>
-${<Code name='type.list' />}
-</div>
+<Code name='type.list' />
 
 Retrieve a list of content types.
 
 ### Arguments
 
-<div>
-${<Params>
+<Params>
   <Param name='site' required>
     The id of the site.
   </Param>
-</Params>}
-</div>
+</Params>
 
 ### HTTP Request
 
-\`GET https://api.fridgecms.com/v1/types\`
-`
+`GET https://api.fridgecms.com/v1/types`

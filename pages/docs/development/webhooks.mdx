@@ -1,10 +1,7 @@
-import docs from 'components/docs'
-import markdown from 'markdown-in-js'
 import Code from 'components/Code'
 
-export default docs({
-  title: 'Webhooks'
-}, markdown`
+# Webhooks
+
 Webhooks allow developers to add functionality to their Fridge projects that react to changes in Fridge content.
 
 ## Creating Webhooks
@@ -13,32 +10,31 @@ On the *Fridge Settings* page, there is a section to add webhooks. Enter the ful
 
 ## Event Payload
 
-When Fridge sends out webhooks, it sends a \`POST\` request to the URLs that have been assigned. The body of the request is a \`JSON\` payload of the event that has occurred. Here is a list of the possible events:
+When Fridge sends out webhooks, it sends a `POST` request to the URLs that have been assigned. The body of the request is a `JSON` payload of the event that has occurred. Here is a list of the possible events:
 
-* \`site.create\`
-* \`site.update\`
-* \`site.delete\`
-* \`type.create\`
-* \`type.update\`
-* \`type.delete\`
-* \`settings.create\`
-* \`settings.update\`
-* \`settings.delete\`
-* \`content.create\`
-* \`content.update\`
-* \`content.delete\`
-* \`user_role.create\`
-* \`user_role.update\`
-* \`user_role.delete\`
-* \`users.create\`
-* \`users.update\`
-* \`users.add_location\`
-* \`users.delete\`
+* `site.create`
+* `site.update`
+* `site.delete`
+* `type.create`
+* `type.update`
+* `type.delete`
+* `settings.create`
+* `settings.update`
+* `settings.delete`
+* `content.create`
+* `content.update`
+* `content.delete`
+* `user_role.create`
+* `user_role.update`
+* `user_role.delete`
+* `users.create`
+* `users.update`
+* `users.add_location`
+* `users.delete`
 
 Example Event payload:
 
-<div>
-${<Code language='json'>
+<Code language='json'>
 {`{
   "type": "content.create",
   "site_id": 1,
@@ -59,6 +55,4 @@ ${<Code language='json'>
     "user_id": 90
   }
 }`}
-</Code>}
-</div>
-`)
+</Code>
