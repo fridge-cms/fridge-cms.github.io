@@ -1,20 +1,38 @@
-import http from "data/api/http";
-import node from "data/api/node";
-import ruby from "data/api/ruby";
-import php from "data/api/php";
-import response from "data/api/response";
+// v1
+import v1http from "data/api/v1/http";
+import v1node from "data/api/v1/node";
+import v1ruby from "data/api/v1/ruby";
+import v1php from "data/api/v1/php";
+import v1response from "data/api/v1/response";
+
+// v2
+import http from "data/api/v2/http";
+import node from "data/api/v2/node";
+import ruby from "data/api/v2/ruby";
+import php from "data/api/v2/php";
+import response from "data/api/v2/response";
+
 import { langs } from "data/api";
 import Code from "../Code";
 
-const modules = { http, node, ruby, php };
+const modules = {
+  v1: {
+    http: v1http,
+    node: v1node,
+    ruby: v1ruby,
+    php: v1php,
+    response: v1response,
+  },
+  v2: { http, node, ruby, php, response },
+};
 
-export default ({ name }) => {
-  const exampleResponse = response(name);
+export default ({ name, version }) => {
+  const exampleResponse = modules[version].response(name);
   return (
     <div className="code">
       <div className="wrap">
         {langs.map((lang, i) => {
-          const api = modules[lang.value](name);
+          const api = modules[version][lang.value](name);
           return (
             <Code key={i} language={lang.syntax}>
               {api ? api.code : "Coming soon..."}

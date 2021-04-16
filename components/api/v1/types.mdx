@@ -1,28 +1,27 @@
-import Code from '../Code'
-import { Params, Param } from '../Params'
+import Code from "../Code";
+import { Params, Param } from "../Params";
 
 # Content Types
 
 ## Create a new Content Type
 
-<Code name='type.create' />
+<Code name="type.create" version="v1" />
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the content type will be created.
   </Param>
-  <Param name='name' required>
+  <Param name="name" required>
     The name of the content type.
   </Param>
-  <Param name='display_order'>
-    A 0-based number specifying the default order in which the content type is listed.
+  <Param name="display_order">
+    A 0-based number specifying the default order in which the content type is
+    listed.
   </Param>
-  <Param name='options'>
-    An object of key/value pair options.
-  </Param>
-  <Param name='parts' required>
+  <Param name="options">An object of key/value pair options.</Param>
+  <Param name="parts" required>
     An array of part definition objects.
   </Param>
 </Params>
@@ -33,17 +32,17 @@ import { Params, Param } from '../Params'
 
 ## Retrieve an existing Content Type
 
-<Code name='type.get' />
+<Code name="type.get" version="v1" />
 
 Retrieve the details of an existing content type. You must supply the unique content type id or slug.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the content type belongs.
   </Param>
-  <Param name=':identifier' required>
+  <Param name=":identifier" required>
     The id or slug of the content type to retrieve.
   </Param>
 </Params>
@@ -54,26 +53,23 @@ Retrieve the details of an existing content type. You must supply the unique con
 
 ## Update a Content Type
 
-<Code name='type.update' />
+<Code name="type.update" version="v1" />
 
 Updates the specified content type by setting the values of the parameters passed.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the content type belongs.
   </Param>
-  <Param name='name'>
-    The name of the content type.
+  <Param name="name">The name of the content type.</Param>
+  <Param name="display_order">
+    A 0-based number specifying the default order in which the content type is
+    listed.
   </Param>
-  <Param name='display_order'>
-    A 0-based number specifying the default order in which the content type is listed.
-  </Param>
-  <Param name='options'>
-    An object of key/value pair options.
-  </Param>
-  <Param name='parts' required>
+  <Param name="options">An object of key/value pair options.</Param>
+  <Param name="parts" required>
     An array of part definition objects.
   </Param>
 </Params>
@@ -84,17 +80,17 @@ Updates the specified content type by setting the values of the parameters passe
 
 ## Delete a Content Type
 
-<Code name='type.delete' />
+<Code name="type.delete" version="v1" />
 
 Permanently deletes a content type. It cannot be undone.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the content type belongs.
   </Param>
-  <Param name='id' required>
+  <Param name="id" required>
     The id of the content type.
   </Param>
 </Params>
@@ -105,14 +101,14 @@ Permanently deletes a content type. It cannot be undone.
 
 ## List all Content Types
 
-<Code name='type.list' />
+<Code name="type.list" version="v1" />
 
 Retrieve a list of content types.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site.
   </Param>
 </Params>

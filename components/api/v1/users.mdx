@@ -1,33 +1,40 @@
-import Code from '../Code'
-import { Params, Param } from '../Params'
+import Code from "../Code";
+import { Params, Param } from "../Params";
 
 # Users
 
 ## Create a new user
 
-<Code name='user.create' />
+<Code name="user.create" version="v1" />
 
 Creates a new user.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user will be created.
   </Param>
-  <Param name=':identifier' required>
+  <Param name=":identifier" required>
     The id or slug of the user role used to create the user.
   </Param>
-  <Param name='active' extra={<span>default is <strong>true</strong></span>}>
+  <Param
+    name="active"
+    extra={
+      <span>
+        default is <strong>true</strong>
+      </span>
+    }
+  >
     The id of the site where the user will be created.
   </Param>
-  <Param name='email' required extra='unique'>
+  <Param name="email" required extra="unique">
     Email address.
   </Param>
-  <Param name='password' required>
+  <Param name="password" required>
     Password.
   </Param>
-  <Param name='content' required>
+  <Param name="content" required>
     An array or hash of content values paired to part identifiers
   </Param>
 </Params>
@@ -40,17 +47,17 @@ Creates a new user.
 
 ## Retrieve an existing User
 
-<Code name='user.get' />
+<Code name="user.get" version="v1" />
 
 Retrieve the details of an existing user. You must supply the unique site id and user id.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user belongs.
   </Param>
-  <Param name=':id' required>
+  <Param name=":id" required>
     The id of the user.
   </Param>
 </Params>
@@ -61,29 +68,36 @@ Retrieve the details of an existing user. You must supply the unique site id and
 
 ## Update a User
 
-<Code name='user.update' />
+<Code name="user.update" version="v1" />
 
 Updates the specified user by setting the values of the parameters passed.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user belongs.
   </Param>
-  <Param name=':id' required>
+  <Param name=":id" required>
     The id of the user.
   </Param>
-  <Param name='active' extra={<span>default is <strong>true</strong></span>}>
+  <Param
+    name="active"
+    extra={
+      <span>
+        default is <strong>true</strong>
+      </span>
+    }
+  >
     Boolean which indicates if the user is active or not.
   </Param>
-  <Param name='email' required extra='unique'>
+  <Param name="email" required extra="unique">
     Email address.
   </Param>
-  <Param name='password' required extra='Admins only'>
+  <Param name="password" required extra="Admins only">
     Supplying a passowrd will change the password of the user.
   </Param>
-  <Param name='content' required>
+  <Param name="content" required>
     An array or hash of content values paired to part identifiers
   </Param>
 </Params>
@@ -94,29 +108,36 @@ Updates the specified user by setting the values of the parameters passed.
 
 ## Delete a User
 
-<Code name='user.delete' />
+<Code name="user.delete" version="v1" />
 
 Permanently deletes a user. It cannot be undone.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user belongs.
   </Param>
-  <Param name=':id' required>
+  <Param name=":id" required>
     The id of the user.
   </Param>
-  <Param name='active' extra={<span>default is <strong>true</strong></span>}>
+  <Param
+    name="active"
+    extra={
+      <span>
+        default is <strong>true</strong>
+      </span>
+    }
+  >
     Boolean which indicates if the user is active or not.
   </Param>
-  <Param name='email' required extra='unique'>
+  <Param name="email" required extra="unique">
     Email address.
   </Param>
-  <Param name='password' required extra='Admins only'>
+  <Param name="password" required extra="Admins only">
     Supplying a passowrd will change the password of the user.
   </Param>
-  <Param name='content' required>
+  <Param name="content" required>
     An array or hash of content values paired to part identifiers
   </Param>
 </Params>
@@ -127,37 +148,42 @@ Permanently deletes a user. It cannot be undone.
 
 ## List all Users
 
-<Code name='user.list' />
+<Code name="user.list" version="v1" />
 
 Retrieve a list of users.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site.
   </Param>
-  <Param name='role'>
-    The id or slug of a user role to filter by.
+  <Param name="role">The id or slug of a user role to filter by.</Param>
+  <Param name="active">
+    <code>true</code> or <code>false</code> or <code>all</code>. Filters content
+    by active, inactive, or both.
   </Param>
-  <Param name='active'>
-    <code>true</code> or <code>false</code> or <code>all</code>. Filters content by active, inactive, or both.
-  </Param>
-  <Param name='limit'>
+  <Param name="limit">
     A number which limits the amount of content retrieved.
   </Param>
-  <Param name='offset'>
+  <Param name="offset">
     A number which offsets the start of content retrieved.
   </Param>
-  <Param name='sort_method' extra={<span>default is <code>date_created</code> or the sort method of the user role</span>}>
-    Specify how users are sorted. Options are <code>date_created</code>, <code>manual</code>, or any valid part name.
+  <Param
+    name="sort_method"
+    extra={
+      <span>
+        default is <code>date_created</code> or the sort method of the user role
+      </span>
+    }
+  >
+    Specify how users are sorted. Options are <code>date_created</code>,{" "}
+    <code>manual</code>, or any valid part name.
   </Param>
-  <Param name='sort_order'>
+  <Param name="sort_order">
     Specify the direction of the sort. <code>asc</code> or <code>desc</code>
   </Param>
-  <Param name='{part_name}'>
-    Any part name/part value pair to filter by.
-  </Param>
+  <Param name="{part_name}">Any part name/part value pair to filter by.</Param>
 </Params>
 
 ### HTTP Request

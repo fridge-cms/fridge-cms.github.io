@@ -7,10 +7,10 @@ import { langs } from "data/api";
 import ScrollTrackHeading from "components/ScrollTrackHeading";
 import { MDXProvider } from "@mdx-js/react";
 
-import Auth from "components/api/v2/auth.mdx";
+// import Auth from "components/api/v2/auth.mdx";
 // import Sites from "components/api/v2/sites.mdx";
 // import Types from "components/api/sections/types.mdx";
-// import Content from "components/api/sections/content.mdx";
+import Content from "components/api/v2/content.mdx";
 // import Roles from "components/api/sections/roles.mdx";
 // import Users from "components/api/sections/users.mdx";
 
@@ -36,12 +36,12 @@ export default class extends Component {
       <div className={`lang-${lang}`}>
         <PageTitle name="API Reference" />
         <MDXProvider components={components}>
-          <Auth />
-          {/* <Sites />
-          <Types />
+          {/* <Auth /> */}
+          {/* <Sites /> */}
+          {/* <Types /> */}
           <Content />
-          <Roles />
-          <Users /> */}
+          {/* <Roles /> */}
+          {/* <Users /> */}
         </MDXProvider>
         <div className="code-bg" />
         <LangPicker value={lang} onChange={this.onChangeLang} langs={langs} />

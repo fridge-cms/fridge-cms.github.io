@@ -1,40 +1,38 @@
-import Code from '../Code'
-import { Params, Param } from '../Params'
+import Code from "../Code";
+import { Params, Param } from "../Params";
 
 # User Roles
 
 ## Create a new User Role
 
-<Code name='role.create' />
+<Code name="role.create" version="v1" />
 
 Creates a new user role.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user role will be created.
   </Param>
-  <Param name='name' required>
+  <Param name="name" required>
     The name of the user role.
   </Param>
-  <Param name='display_order'>
-    A 0-based number specifying the default order in which the content type is listed.
+  <Param name="display_order">
+    A 0-based number specifying the default order in which the content type is
+    listed.
   </Param>
-  <Param name='options'>
-    An object of key/value pair options.
-  </Param>
-  <Param name='parts' required>
+  <Param name="options">An object of key/value pair options.</Param>
+  <Param name="parts" required>
     An array of part definition objects.
   </Param>
-  <Param name='admin_access' extra={<span>Admins only</span>}>
+  <Param name="admin_access" extra={<span>Admins only</span>}>
     Control if this role has access to the Fridge dashboard.
   </Param>
-  <Param name='permissions' extra={<span>Admins only</span>}>
+  <Param name="permissions" extra={<span>Admins only</span>}>
     An object of role-based permissions
   </Param>
 </Params>
-
 
 ### HTTP Request
 
@@ -42,17 +40,17 @@ Creates a new user role.
 
 ## Retrieve an existing User Role
 
-<Code name='role.get' />
+<Code name="role.get" version="v1" />
 
 Retrieve the details of an existing user role. You must supply the unique site id and user role id or slug.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user role belongs.
   </Param>
-  <Param name=':identifier' required>
+  <Param name=":identifier" required>
     The id or slug of the user role.
   </Param>
 </Params>
@@ -63,32 +61,29 @@ Retrieve the details of an existing user role. You must supply the unique site i
 
 ## Update a User Role
 
-<Code name='role.update' />
+<Code name="role.update" version="v1" />
 
 Updates the specified user role by setting the values of the parameters passed.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user role will be created.
   </Param>
-  <Param name='name'>
-    The name of the user role.
+  <Param name="name">The name of the user role.</Param>
+  <Param name="display_order">
+    A 0-based number specifying the default order in which the content type is
+    listed.
   </Param>
-  <Param name='display_order'>
-    A 0-based number specifying the default order in which the content type is listed.
-  </Param>
-  <Param name='options'>
-    An object of key/value pair options.
-  </Param>
-  <Param name='parts' required>
+  <Param name="options">An object of key/value pair options.</Param>
+  <Param name="parts" required>
     An array of part definition objects.
   </Param>
-  <Param name='admin_access' extra={<span>Admins only</span>}>
+  <Param name="admin_access" extra={<span>Admins only</span>}>
     Control if this role has access to the Fridge dashboard.
   </Param>
-  <Param name='permissions' extra={<span>Admins only</span>}>
+  <Param name="permissions" extra={<span>Admins only</span>}>
     An object of role-based permissions
   </Param>
 </Params>
@@ -99,21 +94,22 @@ Updates the specified user role by setting the values of the parameters passed.
 
 ## Delete a User Role
 
-<Code name='role.delete' />
+<Code name="role.delete" version="v1" />
 
 Permanently deletes a user role. It cannot be undone.
 
-<aside className='warning'>
-All users that belong to the specified user role will also be permanently deleted.
+<aside className="warning">
+  All users that belong to the specified user role will also be permanently
+  deleted.
 </aside>
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site where the user role belongs.
   </Param>
-  <Param name=':identifier' required>
+  <Param name=":identifier" required>
     The id or slug of the user role.
   </Param>
 </Params>
@@ -124,14 +120,14 @@ All users that belong to the specified user role will also be permanently delete
 
 ## List all User Roles
 
-<Code name='role.list' />
+<Code name="role.list" version="v1" />
 
 Retrieve a list of user roles.
 
 ### Arguments
 
 <Params>
-  <Param name='site' required>
+  <Param name="site" required>
     The id of the site.
   </Param>
 </Params>

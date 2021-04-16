@@ -1,11 +1,11 @@
-import Code from '../Code'
-import { Params, Param } from '../Params'
+import Code from "../Code";
+import { Params, Param } from "../Params";
 
 # Sites
 
 ## Create a new Fridge site
 
-<Code name='site.create' />
+<Code name="site.create" version="v1" />
 
 Creates a new site. A default set of API keys will be generated and you will be
 added to the reserved `Admin` User Role of the new site.
@@ -13,13 +13,14 @@ added to the reserved `Admin` User Role of the new site.
 ### Arguments
 
 <Params>
-  <Param name='name' required>
+  <Param name="name" required>
     The name of the site.
   </Param>
-  <Param name='webhooks'>
-    An array of URLs that will be sent a <code>POST</code> request upon site actions.
+  <Param name="webhooks">
+    An array of URLs that will be sent a <code>POST</code> request upon site
+    actions.
   </Param>
-  <Param name='endpoints' extra={<em>Experimental</em>}>
+  <Param name="endpoints" extra={<em>Experimental</em>}>
     An array of URLs that will be whitelisted for providing API access.
   </Param>
 </Params>
@@ -30,14 +31,14 @@ added to the reserved `Admin` User Role of the new site.
 
 ## Retrieve an existing Fridge site
 
-<Code name='site.get' />
+<Code name="site.get" version="v1" />
 
 Retrieve the details of an existing site. You must supply the unique site id.
 
 ### Arguments
 
 <Params>
-  <Param name=':id' required>
+  <Param name=":id" required>
     The id of the site to retrieve.
   </Param>
 </Params>
@@ -48,20 +49,19 @@ Retrieve the details of an existing site. You must supply the unique site id.
 
 ## Update a Fridge site
 
-<Code name='site.update' />
+<Code name="site.update" version="v1" />
 
 Updates the specified site by setting the values of the paramters passed.
 
 ### Arguments
 
 <Params>
-  <Param name='name'>
-    The name of the site.
+  <Param name="name">The name of the site.</Param>
+  <Param name="webhooks">
+    An array of URLs that will be sent a <code>POST</code> request upon site
+    actions.
   </Param>
-  <Param name='webhooks'>
-    An array of URLs that will be sent a <code>POST</code> request upon site actions.
-  </Param>
-  <Param name='endpoints' extra={<em>Experimental</em>}>
+  <Param name="endpoints" extra={<em>Experimental</em>}>
     An array of URLs that will be whitelisted for providing API access.
   </Param>
 </Params>
@@ -72,18 +72,19 @@ Updates the specified site by setting the values of the paramters passed.
 
 ## Delete a Fridge site
 
-<Code name='site.delete' />
+<Code name="site.delete" version="v1" />
 
 Permanently deletes a site. It cannot be undone.
 
-<p className='warning'>
-  All content, settings, and users belonging to the specified site are also permanently deleted.
+<p className="warning">
+  All content, settings, and users belonging to the specified site are also
+  permanently deleted.
 </p>
 
 ### Arguments
 
 <Params>
-  <Param name='id' required>
+  <Param name="id" required>
     The ID of the site to be deleted.
   </Param>
 </Params>
@@ -94,7 +95,7 @@ Permanently deletes a site. It cannot be undone.
 
 ## List all Fridge sites
 
-<Code name='site.list' />
+<Code name="site.list" version="v1" />
 
 Retrieve a list of sites.
 
@@ -104,14 +105,14 @@ Retrieve a list of sites.
 
 ## Regenerate API keys for a Fridge site
 
-<Code name='site.keys' />
+<Code name="site.keys" version="v1" />
 
 Deletes existing API keys and creates a new public key and private key/secret pair.
 
 ### Arguments
 
 <Params>
-  <Param name='id' required>
+  <Param name="id" required>
     The ID of the site.
   </Param>
 </Params>
