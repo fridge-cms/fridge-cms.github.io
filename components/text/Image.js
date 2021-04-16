@@ -1,5 +1,5 @@
-export default ({ src }) =>
-  <figure className='image'>
+export default ({ src }) => (
+  <figure className="image">
     <img src={src} />
     <style jsx>{`
       .image {
@@ -8,3 +8,4 @@ export default ({ src }) =>
       }
     `}</style>
   </figure>
+);
